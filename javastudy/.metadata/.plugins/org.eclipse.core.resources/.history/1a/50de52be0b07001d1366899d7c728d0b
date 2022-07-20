@@ -1,0 +1,17 @@
+package ex02.casting;
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+		
+		String strScore = "100";
+		String strMoney = "10000000000";
+		String strGrade = "4.5";
+		
+		int score = Integer.parseInt(strScore);  // 첫 번째 문자 대문자면 무조건 클래스 int의 기능을 모아놓은 클래스
+		long money = Long.parseLong(strMoney);
+		double grade = Double.parseDouble(strGrade);
+		
+	}
+
+}
