@@ -89,10 +89,8 @@ public class Ex05_nested_for {
 		for(int m = 1; m <= 9; m++ ) {
 			for(int n = 2; n <= 9; n++) {
 				System.out.print(n + "x" + m + " = " + (n*m) + " ");
-				if(n == 9) {
-					System.out.println();
-				}
 			}
+			System.out.println();
 		}
 		
 		
