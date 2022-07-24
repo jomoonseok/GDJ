@@ -9,7 +9,7 @@ public class Ex01 {
 		int result1 = a + b;
 		int result2 = a - b;
 		int result3 = a * b;
-		int result4 = a / b; // 몫을 구할 때 / 사용
+		int result4 = a / b; // 몫을 구할 때 사용
 		int result5 = a % b; // 나머지를 구할 때 % 사용
 		
 		System.out.println(result1);
@@ -37,7 +37,8 @@ public class Ex01 {
 		// 연습
 		// a = 7 b = 2
 		// a / b = 3.5
-		double result = (double) a / b; // b를 강제 형 변환해서 실수로 바꿔준다. 정수와 실수가 섞여 있으면 무조건 실수가 된다.
+		double result = (double) a / b; 
+		// b를 강제 형 변환해서 실수로 바꿔준다. 정수와 실수가 섞여 있으면 무조건 실수가 된다.
 		System.out.println(result);
 	}
 
