@@ -20,6 +20,7 @@ public class Ex01_System {
 		int total = 1 + 2 + 3 + 4 + 5;
 		long endTime = System.nanoTime();
 		System.out.println(total + " 계산에 걸린 시간 : " + (endTime - beginTime) + "㎱");
+		System.out.println(beginTime +"\n"+ endTime);
 		
 		
 		// System.currentTimeMillis(); 얘가 중요
