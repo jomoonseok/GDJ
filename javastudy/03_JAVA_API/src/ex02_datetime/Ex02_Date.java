@@ -50,7 +50,8 @@ public class Ex02_Date {
 		// Date 클래스와 now 객체 
 		Date now = new Date();
 		System.out.println(now);
-		
+		String str = new String();
+		System.out.println(str);
 
 	}
 
