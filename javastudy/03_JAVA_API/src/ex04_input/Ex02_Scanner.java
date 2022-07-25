@@ -36,6 +36,7 @@ public class Ex02_Scanner {
 		char gender = sc.nextLine().charAt(0);
 		System.out.println(gender);
 		
+		// 22-07-25 23:26
 		
 	}
 
