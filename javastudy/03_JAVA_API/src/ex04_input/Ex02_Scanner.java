@@ -24,7 +24,7 @@ public class Ex02_Scanner {
 		System.out.println(name);
 		System.out.println(age);
 		*/
-		//sc.close(); // 생략 가능 / 열어놨던 통로를 닫아라.
+		//sc.close(); // 생략 가능 / 열어놨던 통로를 닫아라. / 이 코드는 scanner 다 사용하고 입력해야 한다. 이 코드 다음에는 scanner 사용 못함
 		
 		// 사용할 일이 거의 없다.
 		// 내일 시험에는 나온다.
@@ -36,7 +36,6 @@ public class Ex02_Scanner {
 		char gender = sc.nextLine().charAt(0);
 		System.out.println(gender);
 		
-		// 22-07-25 23:26
 		
 	}
 
