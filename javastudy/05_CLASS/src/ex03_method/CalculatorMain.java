@@ -14,7 +14,7 @@ public class CalculatorMain {
 		
 		System.out.println(answer);
 		
-		// 프로그램 해석할 때는 메인부터 해석한다.
+		// 프로그램 해석할 때는 메인 메소드부터 해석한다.
 		
 		// sub() 메소드 호출
 		System.out.println(calculator.sub(7, 2));

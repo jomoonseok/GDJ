@@ -16,7 +16,8 @@ public class Student {
 		
 	}
 	
-	public Student(String stuNo, String name) {
+	// this의 주된 사용법 : 매개변수와 필드명이 동일한경우 구분하기 위해
+	public Student(String stuNo, String name) { 
 		this.stuNo = stuNo;
 		this.name = name;
 	}

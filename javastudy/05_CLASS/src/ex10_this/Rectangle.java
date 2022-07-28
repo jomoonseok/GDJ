@@ -24,7 +24,7 @@ public class Rectangle {
 		}
 		
 		public int getCircumference() {
-			return (width + height) * 2;
+			return 2 * (width + height) ;
 		}
 		
 }

@@ -19,7 +19,7 @@ public class Computer {
 	int price;
 	
 	// 생성자 (적극적으로 사용하지는 않는다.)
-	//                    ┌>  매개변수 인수(인자)를 받음
+	//                    ┌>  매개변수 : 인수(인자)를 받음
 	Computer(String pModel, int pPrice ) {
 		model = pModel;
 		price = pPrice;

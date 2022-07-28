@@ -2,14 +2,15 @@ package ex08_access_modifier;
 
 public class User {
 
-	// 필드는 private이다.
+	// 필드는 private이다. -클래스 내부에서만 접근 가능한 권한
 	private String id;
 	private String password;
 	private String email;
 	private int point;
 	private boolean isVip;
 	
-	// 메소드는 public이다. (private을 사용하기도 하는데 90%이상은 public이다.)
+	// 메소드는 public이다. - 누구나 접근할 수 있는 권한
+	//(private을 사용하기도 하는데 90%이상은 public이다.)
 	public String getId() {
 		return id;
 	}
@@ -40,7 +41,7 @@ public class User {
 	
 	public void setPoint(int pPoint) {
 		point = pPoint;
-		setVip (point >= 10000);
+		setVip(point >= 10000);
 	}
 	
 	public boolean getVip() {

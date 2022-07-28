@@ -6,7 +6,7 @@ public class UserMain {
 		
 		User user = new User();
 		
-		// System.out.println(user.id); 이런 식의 접근은 허락하지 않는다.
+		// System.out.println(user.id); private을 사용해서 이런 식의 접근은 허락하지 않는다.
 		System.out.println(user.getId()); // 메소드를 통한 우회 작업
 		
 		user.setId("admin");

@@ -10,7 +10,7 @@ public class Car {
 	
 	// 1. 기름 넣기
 	// 반환타입  : void(반환값이 없다)
-	// 메소드    : addOil
+	// 메소드명  : addOil
 	// 매개변수  : int o
 	void addOil(int o) {
 		oil += o;

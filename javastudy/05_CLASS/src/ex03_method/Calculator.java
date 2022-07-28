@@ -7,7 +7,7 @@ public class Calculator {
 	// 클래스 내부에 포함된 함수는 메소드라고 부름
 	
 	/*
-	public static void q1() {              // 메소드의 생성 위치는 상관 없고 실행 순서가 중요하다.
+	public static void q1() {              // 클래스 안이면 메소드의 생성 위치는 상관 없고 실행 순서가 중요하다.
 		System.out.println("Q1");
 	}
 	
