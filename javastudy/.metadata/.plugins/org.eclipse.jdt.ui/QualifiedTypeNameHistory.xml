@@ -8,4 +8,7 @@
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="ex07_constructor.Computer"/>
+    <fullyQualifiedTypeName name="ex09_this.Student"/>
+    <fullyQualifiedTypeName name="ex01_is_a.Student"/>
 </qualifiedTypeNameHistroy>
