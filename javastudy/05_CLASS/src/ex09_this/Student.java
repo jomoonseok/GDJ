@@ -8,15 +8,15 @@ public class Student {
 	// 3. 생성자 내부에서 다른 생성자를 호출할 때 this() 형태로 사용
 	
 	// 필드
-	private String stuNo;  // this.stuNo
-	private String name;   // this.name
+	private String stuNo;  
+	private String name;   
 	
 	// 생성자
 	public Student() {
 		
 	}
 	
-	// this의 주된 사용법 : 매개변수와 필드명이 동일한경우 구분하기 위해
+	// this의 주된 사용법 : 매개변수와 필드명이 동일한경우 구분하기 위해 this를 사용
 	public Student(String stuNo, String name) { 
 		this.stuNo = stuNo;
 		this.name = name;

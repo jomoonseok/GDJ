@@ -51,14 +51,6 @@ public class Car {
 	// 매개변수 : x
 	
 	void pushBrake() {
-		if(speed < 25) {
-			speed = 0;
-			return;
-		}
-		speed -= 25;
-	}
-	/*
-	void pushBrake() {
 		if(speed == 0) {
 			return;
 		}
@@ -67,7 +59,7 @@ public class Car {
 			speed = 0;
 		}
 	}
-	*/
+	
 	
 	// 3. 계기판(기름, 속도) 확인
 	// 반환타입 : void
