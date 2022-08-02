@@ -6,8 +6,7 @@ Ex05 날짜/시간 패턴
 
 3. M    7
 4. MM   07
-5. MMM  Jul  (Jan ~ Dec)
-6. MMMM July (January ~ December)
+5. MMM  1월  (1월 ~ 12월)
 
 7. d    1
 8. dd   01

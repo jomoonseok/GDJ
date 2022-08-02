@@ -1,0 +1,31 @@
+class Person {
+	void eat(){
+		
+	}
+}
+
+
+class Student extends Person {
+	@Override
+	void eat(){
+	
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) {
+		Person p = new Student();
+		p.eat(); // 실행순서
+	}
+}
+// Person 타입 -> Person의 eat() 메소드 호출 -> new Student(); -> Student eat() 메소드 실행
+// new Student(); 나중에 동작하는 코드이다. 
+// 그래서 처음에는 Person 타입인줄알고 Person 타입을 호출했다가
+// new Student();를 보고 Person 타입이 아닌 Student 타입을 호출하고 실행한다.
+
+정적 바인딩 (C++)
+Person 타입 -> person 호출, 실행
+
+동적 바인딩 (Java)
+person 타입 -> person 호출 new Student(); -> Student 호출, 실행
