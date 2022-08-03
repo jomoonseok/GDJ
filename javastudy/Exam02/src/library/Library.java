@@ -32,16 +32,17 @@ public class Library {
 			return;
 		}
 		System.out.println("====책삭제===");
-		System.out.print("삭제할 책의 번호(1 ~ " + idx + " >>> ");
+		System.out.print("삭제할 책의 번호 >>> ");
 		int bookNo = sc.nextInt() -1;
-		if(bookNo < 0 || bookNo > idx) {
-			System.out.println("책 번호가 " + (bookNo+1) + "인 책은 없습니다.");
-			return;
+		for(int i=0; i<idx; i++) {
+			if(books[i].getBookNo() == bookNo) {
+				System.arraycopy(books, i + 1, books, i, idx - i - 1);  // 배열을 통째로 옮긴다.
+				books[--idx] = null;
+				System.out.println("책 번호가 " + (bookNo) + "인 책을 삭제했습니다.");
+				return; // break도 가능
+			}
 		}
-		System.arraycopy(books, bookNo+1, books, bookNo, idx-bookNo-1);  // 배열을 통째로 옮긴다.
-		books[--idx] = null;
-		System.out.println("책 번호가 " + (bookNo+1) + "인 책을 삭제했습니다.");
-		
+		System.out.println("책 번호가 " + bookNo + "인 책이 없습니다.");
 	}
 	
 	private void findBook() {
