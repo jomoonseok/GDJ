@@ -21,10 +21,6 @@ eclipse.ini 열어서 마지막 줄에 있는
 -javaagent:C:\GDJ\installer\eclipse\lombok.jar
 위 경로에 한글이 포함되어 있거나 공백이 포함되어 있다.
 
-부르는 이름
-Bean
-Vo
-Dto
 
 이클립스에 추가하는 방법
 build Path -> configure build path -> library 선택하고 class path 누르고 Add Exteranl JARs... 누르고 
