@@ -14,7 +14,7 @@ public class Rectangle {
 		}
 		
 		public Rectangle(int n) {
-			this(n, n); // this의 두 번째 사용법 / 인수가 2개인 다른 생성자를 호출한다.
+			this(n, n); // this의 두 번째 사용법 / this(); 다른 생성자를 호출한다.
 		}
 		
 		
