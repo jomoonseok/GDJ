@@ -13,8 +13,6 @@ public class Student extends Person{
 	private String school;
 	
 	/*public Student(String name, String school) { 
-		// 우리가 만든 생성자는 이름이 필요한데 여기서 이름을 준다.
-		
 		super(name); // name은 슈퍼클래스의 생성자 매개변수로 들어간다
 		             // super(); 슈퍼클래스를 나타내는 키워드
 		
