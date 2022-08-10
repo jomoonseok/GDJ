@@ -1,0 +1,31 @@
+ctrl + shift + o : import 정리 단축키
+
+공공데이터
+csv
+xml
+json
+
+웹개발할 때 쓰는 프로그래밍 언어 1위 JavaScript
+
+JSON 표준 데이터 표기법
+[
+    {
+        "number" : "100",
+        "name" : "새우깡",
+        "price" : "1500"
+    },
+    {
+        "number" : "101",
+        "name" : "양파링",
+        "price" : "2000"
+    },
+    {
+        "number" : "102",
+        "name" : "홈런볼",
+        "price" : "3000"
+    }
+]
+
+Json Library 사용법 익히기  JSON-java, sjon-simple, google-gson, jackson
+
+최종 목표 java를 이용해서 product파일 만들기
