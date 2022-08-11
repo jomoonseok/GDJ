@@ -116,7 +116,7 @@ public class Main {
 	}
 
 	public static void q2() {
-		// C:storage 데릭터리 삭제하기
+		// C:storage 디렉터리 삭제하기
 		// 디렉터리가 비어 있어야 삭제할 수 있으므로 내부 파일을 먼저 삭제
 		// 파일이 여러개면 배열 활용
 		
