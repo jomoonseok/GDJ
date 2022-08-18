@@ -36,6 +36,8 @@ public class ServerMain {
 			
 			while(true) {
 				
+				// 서버 중지 조건은 없는 상태임
+				
 				client = server.accept();
 				
 				Server s = new Server(client);
