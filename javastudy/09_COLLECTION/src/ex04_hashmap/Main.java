@@ -12,6 +12,7 @@ public class Main {
 		// Map<key, Value>
 		// 저장하려는 건 Value
 		Map<String, String> dictionary = new HashMap<String, String>();
+		// <key의 타입, value의 타입>
 
 		// 추가
 		// 새로운 key값을 사용하면 추가
@@ -46,7 +47,7 @@ public class Main {
 		Map<String, String> map1 = new HashMap<String, String>();
 		map1.put("title", "어린왕자");
 		map1.put("author", "생텍쥐베리");
-		map1.put("price", 10000 + "");
+		map1.put("price", 10000 + ""); // String 타입으로 바꿔줘야 한다.
 		System.out.println(map1);
 
 		// Value를 Object로 관리하기 - 이 방법이 많이 쓰임
