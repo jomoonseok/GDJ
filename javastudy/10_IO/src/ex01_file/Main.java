@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 
 public class Main {
 
-	public static void m1() {
+	public static void m1() { // 폴더 생성
 		// File 클래스
 		// 1. 패키지 : java.io
 		// 2. 파일 및 디렉토리 관리
@@ -19,7 +19,8 @@ public class Main {
 		// 폴더(디렉터리) 만들기
 		File dir = new File("C:\\storage");
 
-		// 존재하지 않으면 만들겠다.
+		// 존재하지 않으면 만들겠다. 
+		// exists() 메소드 : 파일(폴더)가 존재하면 true 반환
 		if (dir.exists() == false) { // if(!dir.exists())
 			dir.mkdirs();
 		}
@@ -32,7 +33,7 @@ public class Main {
 
 	}
 
-	public static void m2() {
+	public static void m2() { // 파일 생성
 
 		File file = new File("C:\\storage", "my.txt");
 

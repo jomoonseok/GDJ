@@ -47,7 +47,7 @@ public class Main {
 			fw = new FileWriter(file);
 			
 			// 출력할 데이터
-			// 1. 1글자 : int 특수문자EOF(End Of File)가 2byte(char)로 표현되지 않아서 4byte(int)로 처리
+			// 1. 1글자 : int / int타입인 이유는 특수문자EOF(End Of File)가 2byte(char)로 표현되지 않아서 4byte(int)로 처리
 			// 2. 여러 글자 : char[], String
 			int c = 'I';
 			char[] cbuf = {' ', 'a', 'm'};
