@@ -168,8 +168,8 @@ public class Main1_XML {
 		try {
 			urlBuilder.append("http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson");
 			urlBuilder.append("?serviceKey=").append(URLEncoder.encode(serviceKey, "UTF-8"));
-			urlBuilder.append("&startCreateDt=").append(URLEncoder.encode("20220808", "UTF-8"));
-			urlBuilder.append("&endCreateDt=").append(URLEncoder.encode("20220812", "UTF-8"));
+			urlBuilder.append("&startCreateDt=20220808");
+			urlBuilder.append("&endCreateDt=20220812");
 
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
@@ -215,6 +215,8 @@ public class Main1_XML {
 
 		// API로부터 전달받은 xml 데이터
 		String response = sb.toString();
+		System.out.println(response);
+		
 		// File 생성
 		File file = new File("C:\\storage", "api2.xml");
 		try {
@@ -224,7 +226,7 @@ public class Main1_XML {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		
 	}
 
 	public static void m3() {
@@ -301,7 +303,6 @@ public class Main1_XML {
 		HttpURLConnection con = null;
 
 		try {
-
 			url = new URL(apiURL);
 			con = (HttpURLConnection) url.openConnection();
 			con.setRequestMethod("GET");
@@ -543,7 +544,7 @@ public class Main1_XML {
 	}
 
 	public static void main(String[] args) {
-		m8();
+		m2();
 
 	}
 

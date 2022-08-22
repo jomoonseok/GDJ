@@ -23,7 +23,7 @@ public class Main2_JSON {
 	
 	// JSON은 줄 바꿈이 있어도 상관없다. / XML은 데이터에 줄 바꿈 포함되어 있으면 원하는 데이터를 가져오지 못 할 수 있다.
 
-	public static void m1() {
+	public static void m1() { 
 
 		// 전국종량제봉투가격표준데이터
 

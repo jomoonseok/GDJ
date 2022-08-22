@@ -132,7 +132,7 @@ public class Main {
 		try {
 			
 			// 원본데이터
-			String str = "한글 english 12345 !@#$+";
+			String str = "한글 English 12345 !@#$+";
 			//             공백은 +              +는 2B
 			// 인코딩
 			String encode = URLEncoder.encode(str, "UTF-8");
@@ -149,7 +149,7 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
-		m2();
+		m4();
 	}
 
 }
