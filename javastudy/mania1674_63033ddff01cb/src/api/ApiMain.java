@@ -25,7 +25,7 @@ import org.w3c.dom.NodeList;
 public class ApiMain {
 
 	public static void main(String[] args) {
-		// 공공데이터 수집을 위한 객체지향 프로그램 구현 시험
+		// 공공데이터 수집을 위한 객체지향 프로그램 구현 정답 
 		
 		/*
 		- 상세구현

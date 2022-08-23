@@ -1,0 +1,388 @@
+<response>
+    <header>
+        <resultCode>00</resultCode>
+        <resultMsg>NORMAL_CODE</resultMsg>
+    </header>
+    <body>
+        <items>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021020618</occrrnc_dt>
+                <dght_cd>2</dght_cd>
+                <occrrnc_day_cd>7</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>22</acc_ty_mlsfc_cd>
+                <acc_ty_cd>22</acc_ty_cd>
+                <aslt_vtr_cd>05 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>06</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>08</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>01</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>947230  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1939148 </occrrnc_lc_y_crd>
+                <lo_crd>126.90338757</lo_crd>
+                <la_crd>37.45001551</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021021812</occrrnc_dt>
+                <dght_cd>1</dght_cd>
+                <occrrnc_day_cd>5</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>2</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>1</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>22</acc_ty_mlsfc_cd>
+                <acc_ty_cd>22</acc_ty_cd>
+                <aslt_vtr_cd>05 </aslt_vtr_cd>
+                <road_frm_lclas_cd>01</road_frm_lclas_cd>
+                <road_frm_cd>02</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>01</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>05</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>945702  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1942180 </occrrnc_lc_y_crd>
+                <lo_crd>126.88588956</lo_crd>
+                <la_crd>37.47725507</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021052011</occrrnc_dt>
+                <dght_cd>1</dght_cd>
+                <occrrnc_day_cd>5</occrrnc_day_cd>
+                <dth_dnv_cnt>2</dth_dnv_cnt>
+                <injpsn_cnt>10</injpsn_cnt>
+                <se_dnv_cnt>2</se_dnv_cnt>
+                <sl_dnv_cnt>6</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>22</acc_ty_mlsfc_cd>
+                <acc_ty_cd>22</acc_ty_cd>
+                <aslt_vtr_cd>02 </aslt_vtr_cd>
+                <road_frm_lclas_cd>01</road_frm_lclas_cd>
+                <road_frm_cd>05</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>03</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>03</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>947473  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1939555 </occrrnc_lc_y_crd>
+                <lo_crd>126.90610576</lo_crd>
+                <la_crd>37.45369774</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021071304</occrrnc_dt>
+                <dght_cd>2</dght_cd>
+                <occrrnc_day_cd>3</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>24</acc_ty_mlsfc_cd>
+                <acc_ty_cd>25</acc_ty_cd>
+                <aslt_vtr_cd>03 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>06</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>05</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>03</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>945482  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1942560 </occrrnc_lc_y_crd>
+                <lo_crd>126.88337335</lo_crd>
+                <la_crd>37.48066712</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021071717</occrrnc_dt>
+                <dght_cd>1</dght_cd>
+                <occrrnc_day_cd>7</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>24</acc_ty_mlsfc_cd>
+                <acc_ty_cd>25</acc_ty_cd>
+                <aslt_vtr_cd>03 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>06</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>05</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>01</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>945274  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1942041 </occrrnc_lc_y_crd>
+                <lo_crd>126.88116015</lo_crd>
+                <la_crd>37.47597391</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021083019</occrrnc_dt>
+                <dght_cd>2</dght_cd>
+                <occrrnc_day_cd>2</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>3</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>2</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>23</acc_ty_mlsfc_cd>
+                <acc_ty_cd>23</acc_ty_cd>
+                <aslt_vtr_cd>05 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>08</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>01</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>05</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>946750  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1940818 </occrrnc_lc_y_crd>
+                <lo_crd>126.89784033</lo_crd>
+                <la_crd>37.46504009</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021090200</occrrnc_dt>
+                <dght_cd>2</dght_cd>
+                <occrrnc_day_cd>5</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>22</acc_ty_mlsfc_cd>
+                <acc_ty_cd>22</acc_ty_cd>
+                <aslt_vtr_cd>03 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>06</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>03</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>05</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>947684  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1939273 </occrrnc_lc_y_crd>
+                <lo_crd>126.90850871</lo_crd>
+                <la_crd>37.45121212</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021092512</occrrnc_dt>
+                <dght_cd>1</dght_cd>
+                <occrrnc_day_cd>7</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>01</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>15</acc_ty_mlsfc_cd>
+                <acc_ty_cd>05</acc_ty_cd>
+                <aslt_vtr_cd>07 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>06</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>01</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>12</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>946886  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1941521 </occrrnc_lc_y_crd>
+                <lo_crd>126.89932746</lo_crd>
+                <la_crd>37.47138421</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021093012</occrrnc_dt>
+                <dght_cd>1</dght_cd>
+                <occrrnc_day_cd>5</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>01</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>11</acc_ty_mlsfc_cd>
+                <acc_ty_cd>01</acc_ty_cd>
+                <aslt_vtr_cd>07 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>07</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>02</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>12</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>946471  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1941784 </occrrnc_lc_y_crd>
+                <lo_crd>126.8946153</lo_crd>
+                <la_crd>37.47373073</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021101215</occrrnc_dt>
+                <dght_cd>1</dght_cd>
+                <occrrnc_day_cd>3</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>01</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>11</acc_ty_mlsfc_cd>
+                <acc_ty_cd>01</acc_ty_cd>
+                <aslt_vtr_cd>05 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>06</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>05</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>12</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>947073  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1939677 </occrrnc_lc_y_crd>
+                <lo_crd>126.90157464</lo_crd>
+                <la_crd>37.45477454</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021102722</occrrnc_dt>
+                <dght_cd>2</dght_cd>
+                <occrrnc_day_cd>4</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>01</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>14</acc_ty_mlsfc_cd>
+                <acc_ty_cd>04</acc_ty_cd>
+                <aslt_vtr_cd>99 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>08</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>01</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>12</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>946674  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1940964 </occrrnc_lc_y_crd>
+                <lo_crd>126.89697038</lo_crd>
+                <la_crd>37.46635164</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021102810</occrrnc_dt>
+                <dght_cd>1</dght_cd>
+                <occrrnc_day_cd>5</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>01</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>11</acc_ty_mlsfc_cd>
+                <acc_ty_cd>01</acc_ty_cd>
+                <aslt_vtr_cd>05 </aslt_vtr_cd>
+                <road_frm_lclas_cd>01</road_frm_lclas_cd>
+                <road_frm_cd>05</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>03</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>12</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>947360  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1940360 </occrrnc_lc_y_crd>
+                <lo_crd>126.90477069</lo_crd>
+                <la_crd>37.46094697</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021111619</occrrnc_dt>
+                <dght_cd>2</dght_cd>
+                <occrrnc_day_cd>3</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>01</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>12</acc_ty_mlsfc_cd>
+                <acc_ty_cd>02</acc_ty_cd>
+                <aslt_vtr_cd>99 </aslt_vtr_cd>
+                <road_frm_lclas_cd>01</road_frm_lclas_cd>
+                <road_frm_cd>05</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>01</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>12</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>947013  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1942390 </occrrnc_lc_y_crd>
+                <lo_crd>126.90215769</lo_crd>
+                <la_crd>37.47952881</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021111819</occrrnc_dt>
+                <dght_cd>2</dght_cd>
+                <occrrnc_day_cd>5</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>26</acc_ty_mlsfc_cd>
+                <acc_ty_cd>26</acc_ty_cd>
+                <aslt_vtr_cd>05 </aslt_vtr_cd>
+                <road_frm_lclas_cd>01</road_frm_lclas_cd>
+                <road_frm_cd>05</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>03</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>05</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>947384  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1940868 </occrrnc_lc_y_crd>
+                <lo_crd>126.90500577</lo_crd>
+                <la_crd>37.46552706</la_crd>
+            </item>
+            <item>
+                <acc_year>2021</acc_year>
+                <occrrnc_dt>2021120108</occrrnc_dt>
+                <dght_cd>1</dght_cd>
+                <occrrnc_day_cd>4</occrrnc_day_cd>
+                <dth_dnv_cnt>1</dth_dnv_cnt>
+                <injpsn_cnt>1</injpsn_cnt>
+                <se_dnv_cnt>0</se_dnv_cnt>
+                <sl_dnv_cnt>0</sl_dnv_cnt>
+                <wnd_dnv_cnt>0</wnd_dnv_cnt>
+                <occrrnc_lc_sido_cd>1100</occrrnc_lc_sido_cd>
+                <occrrnc_lc_sgg_cd>1125</occrrnc_lc_sgg_cd>
+                <acc_ty_lclas_cd>02</acc_ty_lclas_cd>
+                <acc_ty_mlsfc_cd>22</acc_ty_mlsfc_cd>
+                <acc_ty_cd>22</acc_ty_cd>
+                <aslt_vtr_cd>05 </aslt_vtr_cd>
+                <road_frm_lclas_cd>02</road_frm_lclas_cd>
+                <road_frm_cd>08</road_frm_cd>
+                <wrngdo_isrty_vhcty_lclas_cd>98</wrngdo_isrty_vhcty_lclas_cd>
+                <dmge_isrty_vhcty_lclas_cd>01</dmge_isrty_vhcty_lclas_cd>
+                <occrrnc_lc_x_crd>947352  </occrrnc_lc_x_crd>
+                <occrrnc_lc_y_crd>1939030 </occrrnc_lc_y_crd>
+                <lo_crd>126.90477525</lo_crd>
+                <la_crd>37.4489589</la_crd>
+            </item>
+        </items>
+        <totalCount>15</totalCount>
+        <numOfRows>15</numOfRows>
+        <pageNo>1</pageNo>
+    </body>
+</response>
