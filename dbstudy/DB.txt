@@ -231,13 +231,72 @@ F : FK
 
 8-25
 
+06_DDL ~
+
+데이터 조작어(DML) : ROW 생성 수정 삭제
+
+정의된 데이터베이스에 레코드를 삽입하거나 수정하거나 삭제하는 등의 역할을 하는 SQL문이다.
+
+종류 
+	INSERT 레코드 삽입
+	UPDATE 레코드 갱신
+	DELETE 레코드 삭제
+
+INSERT INTO TABLE(COLUMN) VALUES(VALUE);
+UPDATE TABLE SET CONTENT WHERE CONDITION; 
+DELETE FROM TABLE WHERE CONDITION;
+
+NATION 테이블에서
+	INSERT INTO NATION (CODE, NAME, NUMBER)
+	VALUES(1, 'KOREA', 50);
+
+	CODE  NAME   NUMBER
+	 1   KOREA     50
+
+NATION 테이블에서 CODE가 1인 국가의 NUMBER를 40으로 수정 / WHERE절이 중요 / WHERE절 빼고 실행할 수 있는데 그러면 전체 데이터를 수정함
+	UPDATE NATION SET NUMBER = 40 / = 대입연산자
+	  UPDATE절      SET절
+	WHERE CODE = 1; / = 비교연산자 / 하나의 등호로 두 가지 연산을 한다.
+	  WHERE절
+
+	CODE  NAME   NUMBER
+	 1   KOREA     40
+
+NATION 테이블에서 CODE가 1인 국가를 삭제 / WHERE절 생략가능 생략하면 전체 데이터를 삭제
 
 
 
 
+트랜잭션(TRANSACTION)관리
+	INSERT, UPDATE, DELETE 실행해도 완료된 건 아니다. 왜냐면 취소가 가능하기 때문이다.
+
+트랜잭션 제어 명령(DCL-GRANT, REVOKE가 있었다.) / (TCL-트랜잭션 관련 언어 / 트랜잭션:하나의 작업)
+	COMMIT : DML 작업후 완료하려면 이 문장을 넣어야 한다.
+	ROLLBACK : DML작업을 취소한다.
+
+하나의 서비스에서 DML을 2개 이상 처리할 때 트랜잭션 관리를 해줘야 한다.
+하나의 DML이 ROLLBACK되면 전부 ROLLBACK된다.
+이 기능이 없으면 이체할 때 보내지 않은 돈이 들어오거나 보낸 돈이 들어오지 않을 수 있다.
+
+DDL과 DML의 차이
+DDL : 삽입 수정 삭제 / 대상 : DB OBJECT(USER, TABLE) / 커밋(취소불가) : X
+DML : 삽입 수정 삭제 / 대상 : ROW  / 커밋(취소가능) : O
+ 
 
 
+https://mockaroo.com/ 샘플 DB만들 때 사용
 
+쿼리문 
+DDL
+DML
+DQL 제일 오래 배움
+
+앞으로 배울 거
+DQL : SELECT
+FUNCTION : 함수
+조인 : 테이블 2개 이상일 때 사용
+서브쿼리 :쿼리중첩
+시퀀스 : 번호증가
 
 
 
