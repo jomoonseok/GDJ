@@ -1,3 +1,4 @@
+/*
 -- SCOTT 초기화 
 -- SYS 접속 -> 쿼리문 3개 작성
 
@@ -7,7 +8,7 @@ DROP USER SCOTT CASCADE;
 CREATE USER SCOTT IDENTIFIED BY TIGER;
 -- 권한 부여
 GRANT CONNECT, RESOURCE TO SCOTT;
-
+*/
 
 -- SCOTT 계정 초기화
 
