@@ -133,7 +133,14 @@ UPDATE DEPARTMENT
    SET DEPT_NAME = '전략부'
      , LOCATION = '부산'
  WHERE DEPT_NO = 3; -- WHERE절에 1 = 1 이런 코드가 있는 이유는 IF문과 같은 걸 사용할 때 WHERE절이 사용되게 하려고
- 
+
+/*
+아래와 같은 상황을 만들기 위해
+UPDATE EMPLOYEE
+   SET DEPART = 3
+ WHERE EMP_NO = 1005;
+COMMIT;
+*/
  -- 부서번호가 3인 부서의 부서번호를 6으로 수정
  /*
     부서 - 사원
