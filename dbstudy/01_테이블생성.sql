@@ -35,7 +35,7 @@
 */
 
 -- USER_CONSTRAINTS 테이블의 구조 확인
-DESCRIB SYS.USER_CONSTRAINTS -- 약간의 자동완성 기능이 있다. 자동완성에서 나오는 공백은 밑줄이다. / SYS는 생략가능
+DESCRIB SYS.USER_CONSTRAINTS; -- 약간의 자동완성 기능이 있다. 자동완성에서 나오는 공백은 밑줄이다. / SYS는 생략가능
 -- 블록잡아서 CTRL + ENTER : 선택한 부분 실행
 
 -- USER_CONSTRAINTS 테이블의 CONSTRAINT_NAME 칼럼 확인
