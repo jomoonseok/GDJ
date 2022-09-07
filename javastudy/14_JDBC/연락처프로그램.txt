@@ -1,0 +1,55 @@
+window -> show view -> other ->data management ->
+data source explorer -> open ->
+database connection 우클릭 new클릭
+DB선택 : Oracle
+이름 : SCOTT
+next 클릭
+OracleDriver 추가
+Oracle Thin Driver 11버전 선택
+jar List에서 원래 있던 거 삭제하고 ojdbc6.jar 추가
+properties에서 url : jdbc:oracle:thin:@localhost:1521:xe, host : localhost로 바꾸고 save password 체크하고 
+test connection 눌러서 성공확인한 후 finish
+
+
+
+
+
+- db.properties
+- 1. 민감 정보는 별도의 파일로 보관하고 gitignore를 통해서 github에 안 올려야 함
+  2. DB접속정보를 db.properties 파일에 보관
+
+- gitignore 사용순서
+  1. gitignore 파일에 dp.properties 작성 후 저장(로컬레파지토리 변경)
+  2. push (원격레파지토리 변경)
+  3. db.properties 파일 생성
+      url=주소
+      user=사용자
+      password=비밀번호 / url, user, password 키워드는 정해지지않은 키워드이다. / 나중에 string 배울 때는 정해진 키워드다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
