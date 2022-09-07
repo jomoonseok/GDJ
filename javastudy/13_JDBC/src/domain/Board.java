@@ -1,6 +1,6 @@
 package domain;
 
-import oracle.sql.DATE;
+import java.sql.Date;
 
 // 게시판 1개의 정보를 담을 수 있는 객체를 생성하는 클래스
 // Bean, VO, DTO 등으로 불림
@@ -13,13 +13,13 @@ public class Board {
 	private String title;
 	private String content;
 	private int hit;
-	private DATE create_date;
+	private Date create_date;
 	
 	public Board() {
 		
 	}
 
-	public Board(int board_no, String title, String content, int hit, DATE create_date) {
+	public Board(int board_no, String title, String content, int hit, Date create_date) {
 		super();
 		this.board_no = board_no;
 		this.title = title;
@@ -60,12 +60,18 @@ public class Board {
 		this.hit = hit;
 	}
 
-	public DATE getCreate_date() {
+	public Date getCreate_date() {
 		return create_date;
 	}
 
-	public void setCreate_date(DATE create_date) {
+	public void setCreate_date(Date create_date) {
 		this.create_date = create_date;
+	}
+
+	@Override
+	public String toString() {
+		return "Board [board_no=" + board_no + ", title=" + title + ", content=" + content + ", hit=" + hit
+				+ ", create_date=" + create_date + "]";
 	}
 	
 }

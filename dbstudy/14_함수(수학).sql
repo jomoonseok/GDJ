@@ -38,7 +38,7 @@ SELECT
        DUAL;
 
 SELECT
-       TRUNC(9999, -1) -- 9999 (원 단위 절사)
+       TRUNC(9999, -1) -- 9990 (원 단위 절사)
      , TRUNC(9999, -2) -- 9900 
   FROM
        DUAL;

@@ -63,8 +63,12 @@ PreparedStatement의 로그인 상황
 
 
 - SELECT
-
-
+  1. 실행은 executeQuery() 메소드를 이용
+  2. 실행 결과는 ResultSet 객체이다.
+  3. ResultSet 객체는 테이블을 행(Row) 단위로 스캔하고 가져올 수 있는 객체이다.
+  4. next() 메소드를 이용해서 행(Row) 단위로 스캔한다. / next() 메소드 한 번당 행 하나 스캔한다./ 행이 2개(목록) 이상이면 while문, 
+     행이 1개면(상세보기) if문 사용한다. / 목록은 List<Board>에 저장, 상세보기는 Board 객체에 저장
+      
 
 
 
