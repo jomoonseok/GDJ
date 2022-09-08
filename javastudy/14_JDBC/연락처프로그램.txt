@@ -27,10 +27,27 @@ test connection 눌러서 성공확인한 후 finish
       password=비밀번호 / url, user, password 키워드는 정해지지않은 키워드이다. / 나중에 string 배울 때는 정해진 키워드다.
 
 
+09/08
 
 
+Controller play()
+   선택에 따른 ContactService의 메소드 호출
 
 
+ContactService
+   ContactDAO의 메소드 호출
+
+Controller -> Service -> DAO -> DB
+
+DAO -> Service -> Controller순으로 개발
+
+
+연락처 기능 추가하기 
+
+메뉴 : 6.연락처csv만들기
+========연락처csv파일========
+번호,이름,전화,이메일,등록일
+1,홍길동,1111,hong@naver.com,22/09/08
 
 
 
