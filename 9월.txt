@@ -1,0 +1,24 @@
+관계형 DB (RDB)
+  - Oracle(수업) 2주 단점 : 비싸다.
+  - MS-SQL
+  - MySQL(예정) 
+  - mariaDB
+
+DB -> JDBC -> Web(HTML,CSS,JavaScript(Jquery)) 
+2주           한달
+
+PL/SQL : ORACLE
+VARIABLE
+IF
+WHILE
+
+PL/SQL
+  PROCEDURE : 한 번에 수행할 쿼리문이 여러 개인 경우
+  FUNCTION  : 사용자가 필요한 기능을 함수로 정의
+  TRIGGER   : 행(ROW) 삽입/수정/삭제 시 자동으로 처리되는 기능 정의 
+
+9월 둘째주 JDBC시작
+다음 DBCP 
+9월 세째주 프론트 시작 ~ 10월 초
+
+10월 중순 자바 백엔드 시작
