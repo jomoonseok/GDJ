@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 > img {
+            width: 320px;
+        }
+        .box1 > img:nth-of-type(2) {
+            /*  
+                visibility : visible; 디폴트
+                visibility : hidden;  자리는 차지하고 보이지는 않음
+            */
+            visibility: hidden;
+        }
+
+        /*
+        img를 직접 hover하면 img가 hidden 되었을 때 더 이상 hover 할 수 없으므로 잘못된 구성이다.
+        .box2 > img:hover {
+            visibility: hidden;
+        }
+        */
+        /* img의 hidden과 상관없이 div는 남아있으므로 div를 대상으로 hover 처리한다. */
+        .box2 > div {
+            width: 320px;
+        }
+        .box2 > div > img {
+            width: 100%;
+        }
+        /* 마우스를 댄 div의 아래 img */
+        .box2 > div:hover > img {
+            visibility: hidden;
+        }
+        
+        .answer {
+            visibility: hidden;
+        }
+        .show_answer:hover+.answer {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box1">
+        <img src="../../images/flower1.jpg" alt="꽃">
+        <img src="../../images/flower2.jpg" alt="꽃">
+        <img src="../../images/flower3.jpg" alt="꽃">
+    </div>
+
+    <hr>
+
+    <div class="box2">
+        <div><img src="../../images/flower1.jpg" alt="꽃"></div>
+        <div><img src="../../images/flower2.jpg" alt="꽃"></div>
+        <div><img src="../../images/flower3.jpg" alt="꽃"></div>
+    </div>
+
+    <hr>
+
+    <h1>다음 중 블록레벨이 아닌 태그는 무엇인가?</h1>
+    <ol>
+        <li>&lt;div&gt;</li>
+        <li>&lt;ul&gt;</li>
+        <li>&lt;a&gt;</li>
+        <li>&lt;p&gt;</li>
+    </ol>
+    <span class="show_answer">정답보기</span>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="answer">3</span>
+
+</body>
+</html>

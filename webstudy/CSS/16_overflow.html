@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid gray;
+            /* overflow : scroll; 내용이 영역을 벗어나면 스크롤 바를 생성 */
+            overflow: scroll;
+        }
+        .box2 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid gray;
+            /* overflow-x: scroll; 가로 방향의 스크롤 바를 생성(세로 방향으로 생성 됨 이유는 모름) */
+            overflow-x: scroll;
+        }
+        .box3 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid gray;
+            /* overflow: hidden; 영역을 벗어난 내용물을 모두 숨김 */
+            overflow: hidden;
+        }
+
+        .box4 {
+            width: 200px;
+            height: 50px;
+            border: 1px solid gray;
+            overflow: hidden;
+        }
+        .box4 > div {
+            width: 150px;
+            height: 40px;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae dui a elit consectetur porttitor non cursus
+        lacus. Proin scelerisque, erat in facilisis ultrices, mauris sem dictum libero, non gravida nulla erat sed
+        mauris. In non velit id quam lobortis molestie nec et erat. Fusce placerat ligula at purus luctus, quis
+        convallis orci sollicitudin. Praesent eget nisi consectetur, commodo ante cursus, euismod tortor. Integer ac
+        lectus pharetra, posuere tellus ut, venenatis turpis. Maecenas a sagittis justo, at mattis massa.
+    </div>
+    
+    <hr>
+
+    <div class="box2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae dui a elit consectetur porttitor non cursus
+        lacus. Proin scelerisque, erat in facilisis ultrices, mauris sem dictum libero, non gravida nulla erat sed
+        mauris. In non velit id quam lobortis molestie nec et erat. Fusce placerat ligula at purus luctus, quis
+        convallis orci sollicitudin. Praesent eget nisi consectetur, commodo ante cursus, euismod tortor. Integer ac
+        lectus pharetra, posuere tellus ut, venenatis turpis. Maecenas a sagittis justo, at mattis massa.
+    </div>
+
+    <hr>
+
+    <div class="box3">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae dui a elit consectetur porttitor non cursus
+        lacus. Proin scelerisque, erat in facilisis ultrices, mauris sem dictum libero, non gravida nulla erat sed
+        mauris. In non velit id quam lobortis molestie nec et erat. Fusce placerat ligula at purus luctus, quis
+        convallis orci sollicitudin. Praesent eget nisi consectetur, commodo ante cursus, euismod tortor. Integer ac
+        lectus pharetra, posuere tellus ut, venenatis turpis. Maecenas a sagittis justo, at mattis massa.
+    </div>
+
+    <hr>
+
+    <div class="box4">
+        <div>BOX1</div>
+        <div>BOX2</div>
+        <div>BOX3</div>
+    </div>
+
+</body>
+</html>
