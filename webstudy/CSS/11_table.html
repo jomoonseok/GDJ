@@ -10,12 +10,14 @@
             /* table의 width, height 지정 가능함 */
             width: 500px;
             height: 300px;
+            
             /* table의 border는 바깥쪽 테두리를 의미함 */
             border: 1px solid gray;
             /* border-top: 1px solid gray;
             border-bottom: 1px solid gray;
             border-left: 1px solid gray;
             border-right: 1px solid gray; */
+
             /* table의 border-collapse(테두리 붕괴)를 이용해 table과 td의 border를 합칠 수 있음 */
             border-collapse: collapse;
         }
@@ -55,26 +57,51 @@
 
 
 
+        
 
 
+        .box2 {
+            width: 720px;
+            height: 567px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .title {
+            font-size: 20px;
+        }
+        .nine {
+            color: blue;
+            font-size: 40px;
+        }
         .box2 > table {
             border: 1px solid gray;
             border-collapse: collapse;
         }
-        .box2 > table td {
+        .box2 > table > tbody td {
             border: 1px solid gray;
+            text-align: left;
             vertical-align: top;
             width: 100px;
             height: 100px;
         }
         .box2 > table > thead td {
+            border: 1px solid gray;
             width: 100px;
             height: 50px;
-            text-align: center;
             line-height: 50px;
         }
-        
-        
+        .prev {
+            color: gray;
+        }
+        .sat {
+            color: blue;
+        }
+        .holiday {
+            color: red;
+        }
+        .next {
+            color: gray;
+        }       
     </style>
 </head>
 <body>
@@ -115,67 +142,66 @@
     <hr>
 
     <div class="box2">
+        <span class="title">2022 <span class="nine">9</span> september</span>
         <table>
             <thead>
                 <tr>
-                    <td>SUN</td>
+                    <td class="holiday">SUN</td>
                     <td>MON</td>
                     <td>TUE</td>
                     <td>WED</td>
                     <td>THU</td>
                     <td>FRI</td>
-                    <td>SAT</td>
+                    <td class="sat">SAT</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>28</td>
-                    <td>29</td>
-                    <td>30</td>
-                    <td>31</td>
+                    <td class="prev">28</td>
+                    <td class="prev">29</td>
+                    <td class="prev">30</td>
+                    <td class="prev">31</td>
                     <td>1</td>
                     <td>2</td>
-                    <td>3</td>
+                    <td class="sat">3</td>
                 </tr>
                 <tr>
-                    <td>4</td>
+                    <td class="holiday">4</td>
                     <td>5</td>
                     <td>6</td>
                     <td>7</td>
                     <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
+                    <td class="holiday">9</td>
+                    <td class="holiday">10</td>
                 </tr>
                 <tr>
-                    <td>11</td>
-                    <td>12</td>
+                    <td class="holiday">11</td>
+                    <td class="holiday">12</td>
                     <td>13</td>
                     <td>14</td>
                     <td>15</td>
                     <td>16</td>
-                    <td>17</td>
+                    <td class="sat">17</td>
                 </tr>
                 <tr>
-                    <td>18</td>
+                    <td class="holiday">18</td>
                     <td>19</td>
                     <td>20</td>
                     <td>21</td>
                     <td>22</td>
                     <td>23</td>
-                    <td>24</td>
+                    <td class="sat">24</td>
                 </tr>
                 <tr>
-                    <td>25</td>
+                    <td class="holiday">25</td>
                     <td>26</td>
                     <td>27</td>
                     <td>28</td>
                     <td>29</td>
                     <td>30</td>
-                    <td>1</td>
+                    <td class="next">1</td>
                 </tr>
             </tbody>
         </table>
-    </div>
-    
 </body>
 </html>
