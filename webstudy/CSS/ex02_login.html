@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .main_section {
+            display: flex;
+        }
+
+        .id {
+            display: flex;
+            margin-bottom: 10px;
+            border: 1px solid gray;
+            border-radius: 5px 0 5px 0;
+        }
+        .pw {
+            display: flex;
+            border: 1px solid gray;
+            border-radius: 5px 0 5px 0;
+        }
+        .id_icon {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: darkgray;
+        }
+        .pw_icon {
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: darkgray;
+        }
+
+        .login {
+            display: block;
+            width: 70px;
+            height: 70px;
+            margin-left: 10px;
+            background-color: darkgray;
+            font-weight: 900;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section class="main_section">
+        <section class="left_section">
+            <section class="id"> 
+                <article class="id_icon">
+                    <i class="fa-solid fa-user icon"></i>
+                </article>
+                <input type="text" name="id" placeholder=" Username">
+            </section>
+
+            <section class="pw">
+                <article class="pw_icon">
+                    <i class="fa-solid fa-key"></i>
+                </article>
+                <input type="password" name="pw" placeholder=" ●●●●">
+            </section>
+        </section>
+
+        <section class="right_section">
+            <button class="login">로그인</button>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  
+            transition
+
+            1. 특정 속성이 이행(transition)되는 과정을 설정 / 애니메이션을 만들필요없이 애니메이션 효과를 얻을 수 있다.
+            2. 주요 이행 속성
+                all(디폴트), width, height, margin, padding, background-color, border, opacity, visivility, transform(변형)
+        */
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            /* 트랜지션 속성 */
+            transition-property: width; /* width의 변화를 확인할 수 있음 */
+            transition-duration: 1s;    /* 1초동안 width의 변화를 확인할 수 있음 */
+        }
+
+        .box1:hover {
+            width: 50px;
+        }
+
+        .box1:active {
+            width: 200px;
+        }
+
+        .box2 > input {
+            padding: 10px;
+            /* input이 평소에 가지고 있는 테두리는 border 포커스를 가졌을 때 생기는 검은 테두리는 outline이다. */
+            border: 1px solid gray; /* 평소 테두리 */
+            outline: none;             /* 포커스를 가졌을 때 테두리 */
+            /* 트랜지션 단축 속성 */
+            transition: border 1s linear, background-color 1s linear;
+        }
+        .box2 > input:focus {
+            border: 1px solid crimson;
+            background-color: beige;
+        }
+
+
+        .box3 {
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            transition: transform 1s linear;
+        }
+        .box3:active {
+            /* transform: rotate(1080deg); 회전 1080도 */
+            /* transform: scale(2, 1); 가로 2배, 세로 1배 */
+            /* transform: translate(100px, 100px); 가로 100px 세로 100px 이동 */
+            /* transition 없이 사용하면 어떤 변화가 생겼는지 모른다. */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        BOX1
+    </div>
+
+    <hr>
+
+    <div class="box2">
+        <input type="text">
+    </div>
+
+    <hr>
+
+    <div class="box3">
+        BOX3
+    </div>
+</body>
+</html>
