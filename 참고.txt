@@ -2,3 +2,11 @@
 11월 - 세미 프로젝트(2주), 수업(SPRING BOOT)
 10월 - 백엔드 수업(JSP, SPRING)
 9월  - 프론트 수업(HTML, CSS, JS)
+       JS 
+        control : branch(if/switch), loop(while/for)
+        function : 자바 메소드
+        object, array, json
+        form, regular, expression
+        event
+        ajax, promise
+        jquery
