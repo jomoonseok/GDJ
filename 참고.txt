@@ -5,8 +5,7 @@
        JS 
         control : branch(if/switch), loop(while/for)
         function : 자바 메소드
-        object, array, json
-        form, regular, expression
-        event
+        array, object, json, built-in(Date, String, ...), event
+        form, regular, expression, bom
         ajax, promise
         jquery
