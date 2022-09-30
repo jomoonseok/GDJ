@@ -6,6 +6,6 @@
         control : branch(if/switch), loop(while/for)
         function : 자바 메소드
         array, object, json, built-in(Date, String, ...), event
-        form, regular, expression, bom
+        form, regular expression-입력 검사(아이디, 비밀번호, 이메일 등), bom / Java, Python, JS 등 모두 regular expression을 사용
         ajax, promise
         jquery
