@@ -7,5 +7,14 @@
         function : 자바 메소드
         array, object, json, built-in(Date, String, ...), event
         form, regular expression-입력 검사(아이디, 비밀번호, 이메일 등), bom / Java, Python, JS 등 모두 regular expression을 사용
-        ajax, promise
-        jquery
+        ajax-xml/json
+        jquery : JS -> jquery
+                 jquery - ajax/promise
+----------------------------------------
+Back - End
+JSP : Java Server Page - Eclipse
+SpringFramework
+
+UI구현 평가
+       1. 포트폴리오 - UI구현(로그인 화면) 50점
+       2. 구두발표 - 미정 50점
