@@ -12,9 +12,14 @@
                  jquery - ajax/promise
 ----------------------------------------
 Back - End
-JSP : Java Server Page - Eclipse
+
+JSP : Java Server Page - Eclipse 
+- Front : Web Server
+- Back : Web Application Server(WAS) 
+배울 내용 : 서블릿 // JSP // DB - (JDBC / DBCP / MyBatis) // MVC // AJAX
+
 SpringFramework
 
-UI구현 평가
+10/12  UI구현 평가
        1. 포트폴리오 - UI구현(로그인 화면) 50점
        2. 구두발표 - 미정 50점
