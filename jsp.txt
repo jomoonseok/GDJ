@@ -1,0 +1,36 @@
+tomcat 실행 bin 폴더에 startup.bat, startup.sh
+tomcat 종료 bin 폴더에 shutdown.bat, shutdown.sh
+
+포트번호 충돌할 때
+1. oracle 포트번호 바꾸기
+2. tomcat 포트번호 바꾸기 conf 폴더 server.xml 메모장으로 연결해서 port 바꾸기
+   <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+
+eclipse에서 tomcat 지우기
+Preferences -> Server -> Runtime Environmants -> tomcat remove
+
+만들 프로젝트
+dynamic web project : web application server / was는 web server도 포함
+static web project : web server
+
+Target runtime : tomcat 8.5 / 8.5를 선택하면 Dynamic web module version이 3.1이고
+None을 선택하면 4.0이다.
+
+Source folders on build path: 저장할 폴더
+
+Default output folder: 보여줄 파일의 폴더
+
+url 구조
+localhost:9090/01_Servlet
+host       port      context path
+application = context = project
+
+프로젝트 구조
+src/main/java : java
+src : html, css, js, jsp
+
+실행이 안 될때
+1. servers context 삭제 우클릭 restart
+2. 1번 해도 안될 때 clean / clean Tomcat Work Directory 진행
