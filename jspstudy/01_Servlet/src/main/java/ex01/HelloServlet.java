@@ -77,7 +77,6 @@ public class HelloServlet extends HttpServlet { // Servlet은 httpServlet을 상
 			   		open('http://localhost:9090/01_Servlet/HelloServlet')
 	*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
 		// response : 사용자에게 전달할 때 사용
 		response.getWriter().append("Served at: ").append(request.getContextPath());
