@@ -91,7 +91,7 @@
     <script>
         document.getElementById('user_id').onblur = function(event) {
             // 5-20자, 소문자&숫자&-&_
-            var regId = /^[0-9a-z-_]{5,20}$/;
+            var regId = /^[a-z][0-9a-z-_]{5,20}$/;
             if(regId.test(this.value)) {
                 document.getElementById('msg_id').textContent = '멋진 아이디네요';
             } else {
@@ -148,5 +148,6 @@
             }
         }
     </script>
+    
 </body>
 </html>

@@ -1,41 +1,40 @@
-package ex05;
+package ex08_binding;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import org.json.JSONObject;
 
-
-@WebServlet("/JSONServlet")
-public class JSONServlet extends HttpServlet {
+@WebServlet("/BindingServlet2")
+public class BindingServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// 요청
-		request.setCharacterEncoding("UTF-8");
+		// ServletContext
+		ServletContext ctx = getServletContext();
+		int a = (int)ctx.getAttribute("a");
 		
-		// 요청 파라미터
-		String name = request.getParameter("name");
-		String age = request.getParameter("age");
+		// HttpSession
+		HttpSession session = request.getSession();
+		int b = (int)session.getAttribute("b");
 		
-		// 응답할 JSON 객체 만들기
-		JSONObject obj = new JSONObject();
-		obj.put("name", name);
-		obj.put("age", age);
+		// HttpServletRequest
+		Object c = request.getAttribute("c");
 		
 		// 응답
-		response.setContentType("application/json; charset=UTF-8"); // JSON 데이터의 MYME-TYPE
+		response.setContentType("text/html charset=UTF-8");
 		
 		PrintWriter out = response.getWriter();
-		out.println(obj.toString()); // 응답 데이터는 텍스트 처리된 JSON 객체
+		out.println("<h1>a=" + a + ", b=" + b + ", c=" + c + "</h1>");
 		out.close();
 		
 	}
