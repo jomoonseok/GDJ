@@ -34,3 +34,25 @@ src : html, css, js, jsp
 실행이 안 될때
 1. servers context 삭제 우클릭 restart
 2. 1번 해도 안될 때 clean / clean Tomcat Work Directory 진행
+
+
+EL / JSTL(자바 코드 -> 태그)
+
+JSP Standard Tag Library
+
+코어(Core) 라이브러리
+  - 변수 처리, URL 처리, 제어문(분기문, 반복문)
+
+jar 파일을 Tomcat에서 제공
+다 받아도 상관없고 Impl, Spec 두 개만 받아도 된다.
+jar 파일은 WEB-INF 밑에 lib 폴더에 둔다
+
+프로젝트 내보내기
+exprot -> WAR Export
+Destination 저장위치 정하고
+target runtime이 tomcat8.5인지 확인
+Export source files 체크 
+체크하지 않으면 src/main/webapp만 저장됨 체크해야 src/main/java까지 저장됨
+
+프로젝트 불러오기
+import -> WAR file 선택
