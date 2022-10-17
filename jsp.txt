@@ -39,9 +39,15 @@ src : html, css, js, jsp
 EL / JSTL(자바 코드 -> 태그)
 
 JSP Standard Tag Library
+1. 코어(Core) 라이브러리 - 변수 처리, URL 처리, 제어문(분기문, 반복문)
+2. Fmt
 
-코어(Core) 라이브러리
-  - 변수 처리, URL 처리, 제어문(분기문, 반복문)
+MVC
+Model
+View
+Controller
+
+DB + MVC : CRUD
 
 jar 파일을 Tomcat에서 제공
 다 받아도 상관없고 Impl, Spec 두 개만 받아도 된다.
