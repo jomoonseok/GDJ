@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%-- Core Library(1.2버전) --%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
