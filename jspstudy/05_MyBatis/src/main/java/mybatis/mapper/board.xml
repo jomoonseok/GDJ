@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- namespace="mapper의 패키지 경로" -->
+ 
+<mapper namespace="mybatis.mapper.board">
+
+	<!--  
+		mapper
+		1. 쿼리문 작성하는 곳
+		2. 모든 쿼리문에 세미콜론(;) 금지
+		3. <select>, <insert>, <update>, <delete> 태그 사용
+	-->
+	
+	<!-- 
+		1. 게시글 목록
+			1) parameterType : 없음
+			2) resultType    : 목록보기, 상세보기 모두 domain 패키지의 Board 클래스를 반환 
+	-->
+	<select id="selectAllBoards" resultType="Board"> <!-- java의 클래스를 부를 때 패키지 이름까지 적어야 하는 것처럼(import를 안 했다면) domain.Board 이렇게 적어야 하지만 typeAlias를 사용해서 Board만 적어도 된다. -->
+		SELECT BOARD_NO, TITLE, CONTENT, CREATE_DATE
+		  FROM BOARD
+		 ORDER BY BOARD_NO DESC
+	</select>
+	
+	<!--  
+		2. 게시글 상세 보기
+			1) parameterType : int boardNo
+			2) resultType    : 목록보기, 상세보기 모두 domain 패키지의 Board 클래스를 반환 
+	-->
+	<select id="selectBoardByNo" parameterType="int" resultType="Board"> <!-- domain.Board -->
+		SELECT BOARD_NO, TITLE, CONTENT, CREATE_DATE
+		  FROM BOARD
+		 WHERE BOARD_NO = #{boardNo} <!-- getBoardNo()를 부름 --> 
+	</select>
+	
+	<!--  
+		3. 게시글 삽입
+			1) parameterType : Board board
+			2) resultType    : 작성하면 안 됩니다. 자동으로 int로 처리된다.
+	-->
+	<insert id="insertBoard" parameterType="board">
+		INSERT INTO BOARD
+			(BOARD_NO, TITLE, CONTENT, CREATE_DATE)
+		VALUES
+			(BOARD_SEQ.NEXTVAL, #{title}, #{content}, SYSDATE)
+	</insert>
+	
+	<!--  
+		4. 게시글 삭제
+			1) parameterType : int boardNo
+			2) resultType    : 작성하면 안 됩니다. 자동으로 int로 처리된다.
+	-->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE
+		  FROM BOARD
+		 WHERE BOARD_NO = #{boardNo}
+	</delete>
+	
+	
+</mapper>
