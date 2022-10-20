@@ -81,3 +81,12 @@ mybatis-config.xml 파일에 있는 mapper 태그의 resource 속성으로 board
 예)mybatis/mapper/board.xml(resource속성이라 /로 구분)
 
 DB에 문제 있을때는 클린 진행 
+
+http://www.quartz-scheduler.org -> download -> Latest Stable Releases Downloads
+(quartz-2.3.0-distribution.tar.gz) -> 압축해제하고 lib 폴더에 있는 jar 파일 전부 복사해서 jar 폴더에 폴더 하나 만들고 붙여넣기
+CronMaker : 크론식 만들어주는 사이트
+
+java 15 -> java 11로 설정하는법
+프로젝트 우클릭 properties -> project facets -> java11로 설정
+
+java를 사용하는 다른 언어들을 3rd party라고 하는데 여기서 객체는 map과 같은 뜻이다.
