@@ -90,3 +90,7 @@ java 15 -> java 11로 설정하는법
 프로젝트 우클릭 properties -> project facets -> java11로 설정
 
 java를 사용하는 다른 언어들을 3rd party라고 하는데 여기서 객체는 map과 같은 뜻이다.
+
+
+JUnit 테스트 라이브러리
+builder path -> configure builder path -> add library -> junit -> jUnit 4(많이 사용), jUnit 5 선택
