@@ -1,0 +1,40 @@
+다운로드하기 전에 이클립스 버전확인
+Spring을 공부할 때는 인터넷연결이 되어있어야 한다. 
+https://spring.io/ -> project -> spring tools 4 -> 4.16.0 - WINDOWS X86_64 다운로드 ->  Spring Tool Suite 3 wiki -> Latest STS3 Downloads -> full distribution on Eclipse 4.19에서 https://download.springsource.com/release/STS/3.9.18.RELEASE/dist/e4.19/spring-tool-suite-3.9.18.RELEASE-e4.19.0-win32-x86_64.zip 파일 다운로드
+sts4 : boot
+sts3 : mvc
+
+기본설정은 jsp처럼
+
+New -> Spring Legacy Project -> 이름 입력, Spring MVC Project 선택 Next -> 최소 3개 이상의 패키지입력 com.gdu.app01(여기서 app01은 컨텍스트 패스가 된다.)
+
+ioc : bean을 모아둠
+
+maven 프로젝트
+   mvnrepository : 중앙저장소(central)
+   개발에 필요한 jar 보관
+   pom.xml 파일에 필요한 디펜던시를 추가 : jar 다운로드
+
+src/main/java : java
+src/main/resources : xml
+src/test/java : junit
+src/test/resources: junit에서 사용할 xml
+webapp/resources : assets
+webapp/WEB-INF/spring : container / bean 모아두는 곳
+webapp/WEB-INF/views : jsp 
+
+pom.xml
+   <groupId>com.gdu</groupId> 도메인
+   <artifactId>app01</artifactId> 컨텍스트패스
+
+   <packaging>war</packaging>
+   <version>1.0.0-BUILD-SNAPSHOT</version>
+   결과 *.war 파일로 저장됨
+
+   <java-version>1.6</java-version> java버전을 설정할 수 있다.
+
+spring 버전에 따라서 코드가 다르다. (구글링으로 코드 찾을 때 주의)
+
+Bean
+ - XML (setter, constructor, collection)
+ - Java 

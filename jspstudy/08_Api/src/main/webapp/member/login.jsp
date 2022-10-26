@@ -19,8 +19,9 @@
 				url: '${contextPath}/member/refreshCaptcha.do',
 				/* 응답 */
 				dataType: 'json',
-				success: function(resData){
+				success: function(resData){ // resData : {"dirname": "", "filename": "", "key": ""}
 					$('#ncaptcha').prop('src', '../' + resData.dirname + '/' + resData.filename);
+					$('#key').val(resData.key);
 				}
 			}); // ajax
 			
@@ -33,7 +34,7 @@
 
 	<div class="wrap">
 		<h1>로그인</h1>
-		<form action="">
+		<form action="${contextPath}/member/validateCaptcha.do" method="post">
 			<div>
 				<input type="text" name="id" id="id" placeholder="아이디">
 			</div>
@@ -52,7 +53,8 @@
 				</div>
 			</div>
 			<div>
-				<input type="text" name="user_input" placeholder="자동입력 방지문자">
+				<input type="text" name="value" placeholder="자동입력 방지문자">
+				<input type="hidden" name="key" id="key" value="${key}">
 			</div>
 			<div>
 				<button>로그인</button>

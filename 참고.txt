@@ -38,13 +38,18 @@ SpringFramework
 
 10/24(월) - ajax / 요구사항확인 불합격 보충수업
 10/25(화) - ajax(api) / 재평가
-10/26(수) - 스프링 / mybatis CRUD 보충수업
-10/27(목) - 스프링 / mybatis CRUD 보충수업
+10/26(수) - 스프링 / JSP + mybatis CRUD 보충수업
+10/27(목) - 스프링 / JSP + mybatis CRUD 보충수업
 10/28(금) - 스프링
 -----------------------------------------------------------
 Spring Framework
    - Spring MVC Project (legacy) : 세미 (jsp) - *.war
    - String Boot : 파이널 (html + thymeleaf) - *.jar
-수업은 11/11까지
+수업은 11/18까지
 -----------------------------------------------------------
-스프링
+
+10-27 : 간단 게시판 작성
+
+11월 1주 기능 구현 보충
+11월 2주 리눅스(VMWare + ubuntu + putty)
+11월 3주 젠킨스 배포

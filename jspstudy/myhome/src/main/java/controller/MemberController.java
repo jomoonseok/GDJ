@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,11 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import common.ActionForward;
-import service.NaverCaptchaService;
-import service.NaverCaptchaServiceImpl;
+import service.MemberService;
+import service.MemberServiceImpl;
 
 
-@WebServlet("*.do")
+@WebServlet("*.me")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,40 +29,20 @@ public class MemberController extends HttpServlet {
 		String contextPath = request.getContextPath();
 		String urlMapping = requestURI.substring(contextPath.length());
 		
-		// NaverCaptchaServiceImpl 객체 생성
-		NaverCaptchaService service = new NaverCaptchaServiceImpl();
+		// MemberServiceImpl 객체 생성(
+		MemberService service = new MemberServiceImpl();
 		
 		// ActionForward 객체
 		ActionForward af = null;
 		
-		// 요청에 따른 Service 선택
+		// 요청에 따른 메소드 선택 및 실행
 		switch(urlMapping) {
-		case "/member/loginPage.do":
-			// 캡차 키 발급 요청
-			String key = service.getCaptchaKey();
-			// 캡차 이미지 발급 요청
-			Map<String, String> map = service.getCaptchaImage(request, key);
-			request.setAttribute("dirname", map.get("dirname"));
-			request.setAttribute("filename", map.get("filename"));
-			request.setAttribute("key", map.get("key"));
-			// ActionForward 생성
-			af = new ActionForward("/member/login.jsp", false);
+		case "/member/login.me":
+			af = service.login(request, response);
 			break;
-		case "/member/refreshCaptcha.do":
-			service.refreshChptcha(request, response); // ajax이동 af 나오면 안된다.
+		case "/member/logout.me":
+			af = service.logout(request, response);
 			break;
-		case "/member/validateCaptcha.do":
-			boolean result = service.validateUserInput(request);
-			if(result) {
-				af = new ActionForward("/member/success.jsp", false);
-			} else {
-				PrintWriter out = response.getWriter();
-				out.println("<script>");
-				out.println("alert('자동입력 방지문자를 확인하세요');");
-				out.println("location.href='" + request.getContextPath() + "/member/loginPage.do'");
-				out.println("</script>");
-				out.close();
-			}
 		}
 		
 		
