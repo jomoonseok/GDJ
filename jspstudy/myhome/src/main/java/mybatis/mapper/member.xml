@@ -14,4 +14,17 @@
 		 WHERE ID = #{id} AND PW = #{pw} 
 	</select>
 	
+	<insert id="insertMember" parameterType="Member">
+		INSERT INTO MEMBER
+			(MEMBER_NO, ID, PW, NAME, EMAIL, REGISTED_DATE)
+		VALUES
+			(MEMBER_SEQ.NEXTVAL, #{id}, #{pw}, #{name}, #{email}, TO_CHAR(SYSDATE, 'yyyy-mm-dd'))
+	</insert>
+	
+	<delete id="deleteMember" parameterType="int">
+		DELETE
+		  FROM MEMBER
+		 WHERE MEMBER_NO = #{memberNo} <!-- #을 붙이면 Mybatis에서 따옴표를 붙여주는데 $는 따옴표가 붙지않아서 수치 데이터에서 사용할 수 있다. / 하지만 구분하는 용도로 사용하는 것을 권장하지 않는다. -->
+	</delete>
+	
 </mapper>
