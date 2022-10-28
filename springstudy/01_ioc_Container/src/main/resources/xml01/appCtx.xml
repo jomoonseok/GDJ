@@ -10,7 +10,7 @@
 	-->
 	
 	<!--  
-		1. 디폴트 생성자 + setter(property 태그)
+		디폴트 생성자 + setter(property 태그)
 	-->
 	<bean id="calc" class="com.gdu.app01.xml01.Calculator"></bean> <!-- id : 객체 이름 / class : 클래스 이름 -->
 	<bean id="hakseng" class="com.gdu.app01.xml01.Student">
@@ -24,9 +24,4 @@
 			<ref bean="calc" /> <!-- ref 태그는 참조 타입 -->
 		</property> <!-- setter가 필요할 때는 프로퍼티를 찾는다. -->
 	</bean>
-	
-	<!--  
-		2. 생성자(Generate Constructor using Fields)
-	-->
-
 </beans>

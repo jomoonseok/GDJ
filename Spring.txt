@@ -42,3 +42,14 @@ Bean
 xml과 java가 모두 있는 경우
 1. xml이 java에 정의된 bean을 가져오는 경우
 2. java가 xml에 정의된 bean을 가져오는 경우
+
+새 프로젝트를 만들 때 pom.xml부터 설정하기
+pom.xml 설정하고 프로젝트 우클릭 maven - updateproject
+
+tomcat의 버전이 달라서 실행 안 될때는 tomcat의 버전을 맞춰준다.
+8.5->9.0
+압축풀고 환경변수 설정해주기
+스프링에서 preferences -> server -> runtime environments에서 8.5 삭제하고 9.0 등록
+포트번호 9090으로 바꿔주기
+
+propertyes -> Web Project Setting에서 contextPath를 확인할 수 있다.
