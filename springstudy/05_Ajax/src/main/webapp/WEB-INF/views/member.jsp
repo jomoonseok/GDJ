@@ -93,7 +93,7 @@ label {
 		}); // ajax
 
 	} // function
-
+	
 	function fn_ajax4() {
 
 		$('#result').empty();
@@ -131,6 +131,7 @@ label {
 		}); // ajax
 
 	} // function
+	
 </script>
 </head>
 <body>
@@ -143,10 +144,10 @@ label {
 			<label for="pw">패스워드</label> <input type="password" id="pw" name="pw">
 		</div>
 		<div>
-			<input type="button" value="전송1" id="btn1"> <input
-				type="button" value="전송2" id="btn2"> <input type="button"
-				value="전송3" id="btn3"> <input type="button" value="전송4"
-				id="btn4">
+			<input type="button" value="전송1" id="btn1"> 
+			<input type="button" value="전송2" id="btn2"> 
+			<input type="button" value="전송3" id="btn3"> 
+			<input type="button" value="전송4" id="btn4">
 		</div>
 	</form>
 

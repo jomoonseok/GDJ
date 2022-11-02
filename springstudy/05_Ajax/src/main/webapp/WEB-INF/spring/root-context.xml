@@ -7,4 +7,6 @@
 		
 		<bean id="memberService" class="com.gdu.app05.service.MemberServiceImpl" />
 		
+		<bean id="moviceService" class="com.gdu.app05.service.MovieServiceImpl" />
+		
 </beans>

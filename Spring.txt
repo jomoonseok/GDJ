@@ -4,7 +4,7 @@ https://spring.io/ -> project -> spring tools 4 -> 4.16.0 - WINDOWS X86_64 다�
 sts4 : boot
 sts3 : mvc
 
-기본설정은 jsp처럼
+기본설정은 jsp처럼 + server -> runtime environments 9.0 등록
 
 New -> Spring Legacy Project -> 이름 입력, Spring MVC Project 선택 Next -> 최소 3개 이상의 패키지입력 com.gdu.app01(여기서 app01은 컨텍스트 패스가 된다.)
 
@@ -53,3 +53,14 @@ tomcat의 버전이 달라서 실행 안 될때는 tomcat의 버전을 맞춰준
 포트번호 9090으로 바꿔주기
 
 propertyes -> Web Project Setting에서 contextPath를 확인할 수 있다.
+
+JDBC
+DBCP
+Spring-JDBC
+MyBatis
+
+06_Jdbc 
+help
+install new software
+Latest Eclipse Release - https://download.eclipse.org/releases/latest
+database development

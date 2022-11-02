@@ -1,58 +1,57 @@
 package com.gdu.app05.service;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 
 public class MovieServiceImpl implements MovieService {
 
-	// field
-	private final String key = "3812b33ce196899b278553da67d7d7b1";
-	
 	
 	@Override
 	public String getBoxOffice(String targetDt) {
-		// API 요청 및 응답
 		
+		// key
+		String key = "3812b33ce196899b278553da67d7d7b1";
+		
+		// ApiURL
 		String apiURL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
+		apiURL += "?key=" + key + "&targetDt=" + targetDt;
 		
-		String result = null;
-		
+		// API 요청
+		URL url = null;
+		HttpURLConnection con = null;
 		try {
 			
-			URL url = new URL(apiURL);
-			HttpURLConnection con = (HttpURLConnection)url.openConnection();
+			url = new URL(apiURL); // MalformedURLException
+			con = (HttpURLConnection)url.openConnection(); // IOException
 			
-			con.setRequestMethod("GET");
-			
-			con.setRequestProperty("key", key);
-			con.setRequestProperty("targetDt", targetDt);
-			
-			BufferedReader reader = null;
-			if(con.getResponseCode() == 200) {
-				reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
-			} else {
-				reader = new BufferedReader(new InputStreamReader(con.getErrorStream()));
-			}
-			
-			StringBuilder sb = new StringBuilder();
-			String line;
-			while ((line = reader.readLine()) != null) {
-				sb.append(line);
-			}
-			result = sb.toString();
-			
-			reader.close();
-			con.disconnect();
-			
-		} catch(Exception e) {
+			con.setRequestMethod("GET"); // "GET"을 대문자로 지정
+		} catch(MalformedURLException e) {
+			e.printStackTrace();
+		} catch(IOException e) {
 			e.printStackTrace();
 		}
 		
+		// API 응답
+		StringBuilder sb = new StringBuilder();
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(con.getInputStream()))) { // try-catch-resources문은 자원의 close를 생략할 수 있다.
+			String line = null;
+			while((line = reader.readLine()) != null) {
+				sb.append(line);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
-		return result;
+		// con 닫기
+		con.disconnect();
+		
+		// 반환 (API로부터 가져온 모든 텍스트 정보)
+		return sb.toString();
 	}
 
 }
