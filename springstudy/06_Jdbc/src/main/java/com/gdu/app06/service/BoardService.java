@@ -10,5 +10,5 @@ public interface BoardService {
 	public BoardDTO findBoardByNo(int board_no);
 	public int saveBoard(BoardDTO board);
 	public int modifyBoard(BoardDTO board);
-	public int remeveBoard(int board_no);
+	public int removeBoard(int board_no);
 }
