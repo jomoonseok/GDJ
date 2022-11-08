@@ -1,4 +1,4 @@
-package com.gdu.app11.mapper;
+package com.gdu.app11.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.gdu.app11.domain.EmpDTO;
-import com.gdu.app11.service.EmpService;
+import com.gdu.app11.mapper.EmpMapper;
 
 @Service
 public class EmpServiceImpl implements EmpService {
