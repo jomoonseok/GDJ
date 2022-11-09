@@ -1,5 +1,7 @@
 tomcat 실행 bin 폴더에 startup.bat, startup.sh
 tomcat 종료 bin 폴더에 shutdown.bat, shutdown.sh
+bat=window
+sh=linux
 
 포트번호 충돌할 때
 1. oracle 포트번호 바꾸기

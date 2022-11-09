@@ -1,0 +1,27 @@
+Ubuntu
+쿠키 설정
+Download Ubuntu Server 22.04.1 LTS 다운로드
+
+VMWare
+Windows용 Workstation 16 Pro 다운로드
+
+Putty
+접속프로그램
+FTP 프로그램(port:21) -> 보안FTP프로그램 SSH(port:22): putty
+cafe24 사용할 때도 필요
+64-bit x86: putty-64bit-0.78-installer.msi 다운로드
+
+Shell == sh
+
+VMware 설치 후 실행
+Create a New Virtual Machine 클릭
+Typical 체크 Next
+I will install the operating system later. ~ 체크 Next
+Linux 체크 ununtu 64-bit
+Maximum Disk Size 100GB
+
+GDJ54
+server1
+guru
+1111
+1111
