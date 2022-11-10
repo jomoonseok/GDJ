@@ -17,5 +17,7 @@ public interface EmpMapper {
 	public int selectFindEmployeesCount(Map<String, Object> map);
 	
 	public List<EmpDTO> selectFindEmployees(Map<String, Object> map);
+	
+	public List<EmpDTO> selectAutoCompleteList(Map<String, Object> map);
 
 }

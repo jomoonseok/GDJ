@@ -47,6 +47,7 @@
 <script src="${contextPath}/resources/js/jquery-3.6.1.min.js"></script>
 <script>
 	$(document).ready(function(){
+		
 		// area1, area2 표시
 		// 초기 상태 : area1, area2 둘 다 숨김
 		$('#area1, #area2').css('display', 'none');
@@ -63,22 +64,63 @@
 				$('#area2').css('display', 'none');
 			}
 		});
+		
+		// 자동 완성
+		$('#autoSearch').keyup(function(){
+			$('#auto_complete').empty();
+			$.ajax({
+				/* 요청 */
+				type: 'get',
+				url: '${contextPath}/emp/autoComplete',
+				data: 'autoColumn=' + $('#autoColumn').val() + '&autoSearch=' + $(this).val(),
+				/* 응답 */
+				dataType: 'json',
+				success: function(resData){
+					if(resData.status == 200){
+						$.each(resData.list, function(i, emp){
+							
+						});
+					}
+				}
+			});
+		});
+		
+		//
+		if('${recordPerPage}' != ''){
+			$('#recordPerPage').val(${recordPerPage});			
+		} else {
+			$('#recordPerPage').val(10);
+		}
+		
+		$('#recordPerPage').change(function(){
+			location.href = '${contextPath}/emp/list?recordPerPage=' + $(this).val();
+		});
+		
+		
 	});
 </script>
 </head>
 <body>
+	
+	<div>
+		<select id="recordPerPage">
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+		</select>
+	</div>
 
 	<div>
 		<form id="frm_search" action="${contextPath}/emp/search">
 			<select id="column" name="column">
 				<option value="">:::선택:::</option>
-				<option value="EMPLOYEE_ID">사원번호</option>   <!-- 일치 -->
+				<option value="EMPLOYEE_ID">사원번호</option>     <!-- 일치 -->
 				<option value="E.DEPARTMENT_ID">부서번호</option> <!-- 일치 -->
-				<option value="LAST_NAME">성</option>           <!-- 일부 -->
-				<option value="FIRST_NAME">이름</option>        <!-- 일부 -->
-				<option value="PHONE_NUMBER">연락처</option>    <!-- 일부 -->
-				<option value="HIRE_DATE">입사일</option>       <!-- 범위 -->
-				<option value="SALARY">연봉</option>            <!-- 범위 -->
+				<option value="LAST_NAME">성</option>             <!-- 일부 -->
+				<option value="FIRST_NAME">이름</option>          <!-- 일부 -->
+				<option value="PHONE_NUMBER">연락처</option>      <!-- 일부 -->
+				<option value="HIRE_DATE">입사일</option>         <!-- 범위 -->
+				<option value="SALARY">연봉</option>              <!-- 범위 -->
 			</select>
 			<span id="area1">
 				<input type="text" id="query" name="query">
@@ -92,6 +134,21 @@
 				<input type="submit" value="검색">
 				<input type="button" value="전체사원조회" id="btn_all">
 			</span>
+		</form>
+	</div>
+
+	<div>
+		<!-- select로 여러가지 검색 자동완성 해보기 -->
+		<form>
+			<select name="autoColumn" id="autoColumn">
+				<option value="">:::선택:::</option>
+				<option value="EMAIL">이메일</option> 
+				<option value="LAST_NAME">성</option>             
+				<option value="FIRST_NAME">이름</option>          
+				<option value="PHONE_NUMBER">연락처</option>      
+			</select>
+			<input type="text" id="autoSearch" name="autoSearch" list="auto_complete">
+			<datalist id="auto_complete"></datalist>		
 		</form>
 	</div>
 

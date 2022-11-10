@@ -81,5 +81,11 @@
 		 WHERE B.RN BETWEEN #{begin} AND #{end}	
 	</select>
 	
+	<select id="selectAutoCompleteList" parameterType="map" resultType="EmpDTO">
+		SELECT DISTINCT #{autoColumn}
+		  FROM EMPLOYEES
+		 WHERE #{autoColumn} LIKE CONCAT(#{autoSearch}, '%') <!-- Mysql에서도 사용할 수 있는 문자 결합 방법 / CONCAT는 두 글자만 --> 
+	</select>
+	
 	
 </mapper>
