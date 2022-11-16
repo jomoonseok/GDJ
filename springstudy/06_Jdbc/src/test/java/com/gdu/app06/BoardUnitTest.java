@@ -25,7 +25,7 @@ import com.gdu.app06.repository.BoardDAO;
 	컨테이너에 저장된 bean이 어디에 있는지 알려주는 역할
 	
 	1. root-context.xml에 <bean> 태그를 추가한 경우
-	@ContextConfiguration(locations = {"file:src/main/wabapp/WEB-INF/spring/appServlet/servlet-context.xml"})
+	   @ContextConfiguration(locations = {"file:src/main/wabapp/WEB-INF/spring/appServlet/servlet-context.xml"})
 	
 	2. com.gdu.app06.config.SpringBeanConfig.java에 @Bean을 작성한 경우
 	   @ContextConfiguration(classes = {SpringBeanConfig.class})
