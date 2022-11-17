@@ -4,7 +4,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -23,6 +22,7 @@ public class UserController {
 	@Autowired
 	private UserService userService; 
 
+	// 인터셉터를 만들어두면 모든 컨트롤러 위에 인터셉터가 알아서 들어온다.
 	@GetMapping("/")
 	public String welcome() {
 		return "index";
@@ -65,7 +65,7 @@ public class UserController {
 		userService.join(request, response);
 	}
 	
-	@GetMapping("/user/retire")
+	@PostMapping("/user/retire")
 	public void retire(HttpServletRequest request, HttpServletResponse response) {
 		userService.retire(request, response);
 	}
@@ -86,7 +86,7 @@ public class UserController {
 	
 	@GetMapping("/user/logout")
 	public String logout(HttpServletRequest request, HttpServletResponse response) {
-		request.getSession().invalidate();
+		userService.logout(request, response);
 		return "redirect:/";
 	}
 	
@@ -98,5 +98,26 @@ public class UserController {
 		return "redirect:/";
 	}
 	*/
+	
+	@GetMapping("/user/check/form")
+	public String requiredLogin_checkForm() {
+		return "user/check";
+	}
+	
+	@ResponseBody
+	@PostMapping(value="/user/check/pw", produces="application/json")
+	public Map<String, Object> requiredLogin_checkPW(HttpServletRequest request) {
+		return userService.confirmPassword(request);
+	}
+	
+	@GetMapping("user/mypage")
+	public String requiredLogin_mypage() {
+		return "user/mypage";
+	}
+	
+	@PostMapping("/user/modify/pw")
+	public void requiredLogin_modifyPw(HttpServletRequest request, HttpServletResponse response) {
+		userService.modifyPassword(request, response);
+	}
 	
 }

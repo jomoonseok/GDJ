@@ -2,6 +2,7 @@ package com.gdu.app13.service;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -13,6 +14,7 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -51,15 +53,14 @@ public class UserServiceImpl implements UserService {
 	public Map<String, Object> isReduceId(String id) {
 		
 		// selectUserByMap 추가 부분
+		// 조회 조건으로 사용할 Map
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("id", id);
 				
 		Map<String, Object> result = new HashMap<String, Object>();
-				
 		// selectUserByMap 수정 부분
 		// result.put("isUser", userMapper.selectUserById(id) != null);
 		result.put("isUser", userMapper.selectUserByMap(map) != null);
-				
 		result.put("isRetireUser", userMapper.selectRetireUserById(id) != null);
 		return result;
 	}
@@ -281,7 +282,7 @@ public class UserServiceImpl implements UserService {
 				out.println("</script>");
 			} else {
 				out.println("<script>");
-				out.println("alert('회원 탈퇴에 실패했습니다..')");
+				out.println("alert('회원 탈퇴에 실패했습니다.')");
 				out.println("history.back();");
 				out.println("</script>");
 			}
@@ -327,14 +328,17 @@ public class UserServiceImpl implements UserService {
 		// id, pw가 일치하는 회원이 있다 : 로그인 기록 남기기 + session에 loginUser 저장
 		if(loginUser != null) {
 			
+			// 로그인 유지 처리는 keepLogin 메소드가 따로 처리함
+			keepLogin(request, response);
+			
+			// 로그인 처리를 위해서 session에 로그인 된 사용자 정보를 올려둠
+			request.getSession().setAttribute("loginUser", loginUser);
+
 			// 로그인 기록 남기기 
 			int updateResult = userMapper.updateAccessLog(id);
 			if(updateResult == 0) {
 				userMapper.insertAccessLog(id);
 			}
-			
-			// 로그인 처리를 위해서 session에 로그인 된 사용자 정보를 올려둠
-			request.getSession().setAttribute("loginUser", loginUser);
 			
 			// 이동 (로그인페이지 이전 페이지로 되돌아가기)
 			try {
@@ -358,6 +362,189 @@ public class UserServiceImpl implements UserService {
 				e.printStackTrace();
 			}
 		}
+		
+	}
+	
+	
+	
+	@Override
+	public void keepLogin(HttpServletRequest request, HttpServletResponse response) {
+		
+		/*
+			로그인 유지를 체크한 경우
+			
+			1. session_id를 쿠키에 저장해 둔다.
+				(쿠키명 : keepLogin)
+			2. session_id를 DB에 저장해 둔다.
+				(SESSION_ID 칼럼에 session_id를 저장하고, SESSION_LIMIT_DATE 칼럼에 15일 후 날짜를 저장한다.
+		*/
+		
+		/*
+			로그인 유지를 체크하지 않은 경우
+			
+			1. 쿠키 또는 DB에 저장된 정보를 삭제한다.
+				편의상 쿠키명 keepLogin을 제거하는 것으로 처리한다.
+		*/
+		
+		// 파라미터
+		String id = request.getParameter("id");
+		String keepLogin = request.getParameter("keepLogin");
+		
+		// 로그인 유지를 체크한 경우
+		if(keepLogin != null) {
+			
+			// session_id
+			String sessionId = request.getSession().getId(); // session의 아이디 값가져오기
+			 
+			// session_id를 쿠키에 저장하기
+			Cookie cookie = new Cookie("keepLogin", sessionId); 
+			cookie.setMaxAge(60 * 60 * 24 * 15); // 15일
+			cookie.setPath(request.getContextPath());
+			response.addCookie(cookie);
+			
+			// session_id를 DB에 저장하기
+			UserDTO user = UserDTO.builder()
+					.id(id)
+					.sessionId(sessionId)
+					.sessionLimitDate(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 15)) // 현재타임스탬프 + 15일에 해당하는 타임스탬프
+					.build();
+			userMapper.updateSessionInfo(user);
+			
+		}
+		// 로그인 유지를 체크하지 않은 경우
+		else {
+			
+			// keepLogin 쿠키 제거하기
+			Cookie cookie = new Cookie("keepLogin", ""); 
+			cookie.setMaxAge(0); // 쿠키 유지 시간이 0이면 삭제를 의미함
+			cookie.setPath(request.getContextPath());
+			response.addCookie(cookie);
+			
+		}
+		
+	}
+	
+	
+	
+	@Override
+	public void logout(HttpServletRequest request, HttpServletResponse response) {
+		
+		// 로그아웃 처리
+		HttpSession session = request.getSession();
+		if(session.getAttribute("loginUser") != null) {
+			session.invalidate();
+		}
+		
+		// 로그인 유지 풀기
+		/*
+		 * Cookie[] cookieList = request.getCookies(); // 쿠키를 전부 가지고와서 반복문으로 처리
+		 * if(cookieList == null) { return; }
+		 */
+		Cookie cookie = new Cookie("keepLogin", "");
+		cookie.setMaxAge(0); // 쿠키 유지 시간이 0이면 삭제를 의미함
+		cookie.setPath(request.getContextPath());
+		response.addCookie(cookie);
+	}
+	
+	
+	
+	@Override
+	public UserDTO getUserBySessionId(Map<String, Object> map) {
+		return userMapper.selectUserByMap(map);
+	}
+	
+	
+	
+	@Override
+	public Map<String, Object> confirmPassword(HttpServletRequest request) {
+		
+		// 파라미터 pw + SHA-256 처리
+		String pw = securityUtil.sha256(request.getParameter("pw"));
+		
+		// id
+		HttpSession session = request.getSession();
+		String id = ((UserDTO)session.getAttribute("loginUser")).getId();
+		
+		// 조회 조건으로 사용할 Map
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		map.put("pw", pw);
+		
+		// id, pw가 일치하는 회원 조회
+		UserDTO user = userMapper.selectUserByMap(map);
+		
+		// 결과 반환
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("isUser", user != null);
+		
+		return result;
+	}
+	
+	
+	
+	@Override
+	public void modifyPassword(HttpServletRequest request, HttpServletResponse response) {
+		
+		// 현재 로그인 된 사용자
+		HttpSession session = request.getSession();
+		UserDTO loginUser = (UserDTO)session.getAttribute("loginUser");
+
+		// 파라미터
+		String pw = securityUtil.sha256(request.getParameter("pw"));
+
+		// 동일한 비밀번호로 변경 금지
+		if(pw.equals(loginUser.getPw())) {
+			try {
+				response.setContentType("text/html; charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script>");
+				out.println("alert('현재 비밀번호와 동일한 비밀번호로 변경할 수 없습니다.');");
+				out.println("history.back();");
+				out.println("</script>");
+				out.close(); 
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		// 사용자 번호
+		int userNo = loginUser.getUserNo();
+		
+		// DB로 보낼 UserDTO
+		UserDTO user = UserDTO.builder()
+				.userNo(userNo)
+				.pw(pw)
+				.build();
+		
+		// 비밀번호 수정
+		int result = userMapper.updateUserPassword(user);
+		// 응답
+		try {
+					
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+					
+			if(result > 0) {
+				
+				// session에 저장된 loginUser 업데이트
+				loginUser.setPw(pw);
+				
+				out.println("<script>");
+				out.println("alert('비밀번호가 수정되었습니다.')");
+				out.println("location.href='" + request.getContextPath() + "';");
+				out.println("</script>");
+			} else {
+				out.println("<script>");
+				out.println("alert('비밀번호가 수정되지 않았습니다.')");
+				out.println("history.back();");
+				out.println("</script>");
+			}
+			out.close(); 
+
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		
 	}
 	
