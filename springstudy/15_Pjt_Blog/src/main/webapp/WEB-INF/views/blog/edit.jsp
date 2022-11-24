@@ -5,7 +5,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <jsp:include page="../layout/header.jsp">
-	<jsp:param value="블로그작성" name="title"/>
+	<jsp:param value="블로그수정" name="title"/>
 </jsp:include>
 
 <script>
