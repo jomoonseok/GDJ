@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.gdu.app13.domain.UserDTO;
 import com.gdu.app13.service.UserService;
 
 @Controller
@@ -82,14 +83,29 @@ public class UserController {
 		return "user/login";
 	}
 	
-	@PostMapping("/user/login")
-	public void login(HttpServletRequest request, HttpServletResponse response) {
-		userService.login(request, response);
+	@GetMapping("/user/naver/login")
+	public String naverLogin(HttpServletRequest request, Model model) {
+		
+		String access_token = userService.getNaverLoginToken(request);
+		UserDTO profile = userService.getNaverLoginProfile(access_token);  // 네이버로그인에서 받아온 프로필 정보
+		UserDTO naverUser = userService.getNaverUserById(profile.getId()); // 이미 네이버로그인으로 가입한 회원이라면 DB에 정보가 있음
+		
+		// 네이버로그인으로 가입하려는 회원 : 간편가입페이지로 이동
+		if(naverUser == null) {
+			model.addAttribute("profile", profile);
+			return "user/naver_join";
+		}
+		// 네이버로그인으로 이미 가입한 회원 : 로그인 처리
+		else {
+			userService.naverLogin(request, naverUser);
+			return "redirect:/";
+		}
+		
 	}
 	
-	@GetMapping("/user/naver/login")
-	public void naverLogin(HttpServletRequest request) {
-		userService.getNaverLoginTokenNProfile(request);
+	@PostMapping("/user/naver/join")
+	public void naverJoin(HttpServletRequest request, HttpServletResponse response) {
+		userService.naverJoin(request, response);
 	}
 	
 	@GetMapping("/user/logout")

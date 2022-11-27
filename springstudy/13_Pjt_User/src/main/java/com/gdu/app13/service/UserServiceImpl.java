@@ -85,7 +85,6 @@ public class UserServiceImpl implements UserService {
 		map.put("email", email);
 		
 		Map<String, Object> result = new HashMap<String, Object>();
-		
 		// selectUserByMap 수정 부분
 		// result.put("isUser", userMapper.selectUserByEmail(email) != null);
 		result.put("isUser", userMapper.selectUserByMap(map) != null);
@@ -97,18 +96,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public Map<String, Object> sendAuthCode(String email) {
 		
-		// 인증코드 만들기
-		String authCode = securityUtil.getAuthCode(6);          // 수동으로 만든 코드
-		// String authCode = securityUtil.generateRandomString(6); // 스프링이 만들어준 코드
-		System.out.println("발송된 인증코드 : " + authCode);
-		
-		// 이메일 전송을 위한 필수 속성을 Properties 객체로 생성
-		Properties properties = new Properties();
-		properties.put("mail.smtp.host", "smtp.gmail.com");  // 구글 메일로 보냄(보내는 메일은 구글 메일만 가능)
-		properties.put("mail.smtp.port", "587");             // 구글 메일로 보내는 포트 번호
-		properties.put("mail.smtp.auth", "true");            // 인증된 메일
-		properties.put("mail.smtp.starttls.enable", "true"); // TLS 허용
-		
 		/*
 			이메일 보내기 API 사용을 위한 사전 작업
 			
@@ -119,7 +106,19 @@ public class UserServiceImpl implements UserService {
 					(1) 앱 선택   : 기타
 					(2) 기기 선택 : Window 컴퓨터
 					(3) 생성 버튼 : 16자리 앱 비밀번호를 생성해 줌(이 비밀번호를 이메일 보낼 때 사용)
-		*/
+		 */
+		
+		// 인증코드 만들기
+		String authCode = securityUtil.getAuthCode(6);             // 수동으로 만든 코드
+		// String authCode = securityUtil.generateRandomString(6); // 스프링이 만들어준 코드
+		System.out.println("발송된 인증코드 : " + authCode);
+		
+		// 이메일 전송을 위한 필수 속성을 Properties 객체로 생성
+		Properties properties = new Properties();
+		properties.put("mail.smtp.host", "smtp.gmail.com");  // 구글 메일로 보냄(보내는 메일은 구글 메일만 가능)
+		properties.put("mail.smtp.port", "587");             // 구글 메일로 보내는 포트 번호
+		properties.put("mail.smtp.auth", "true");            // 인증된 메일
+		properties.put("mail.smtp.starttls.enable", "true"); // TLS 허용
 
 		// 사용자 정보를 javax.mail.Session에 저장
 		Session session = Session.getInstance(properties, new Authenticator() {
@@ -209,7 +208,7 @@ public class UserServiceImpl implements UserService {
 				.agreeCode(agreeCode)
 				.build();
 		
-		// 회원가입
+		// 회원가입처리
 		int result = userMapper.insertUser(user);
 		
 		// 응답
@@ -217,16 +216,17 @@ public class UserServiceImpl implements UserService {
 			
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
+			
 			if(result > 0) {
 				
 				// selectUserByMap 추가 부분
+				// 조회 조건으로 사용할 Map
 				Map<String, Object> map = new HashMap<String, Object>();
 				map.put("id", id);
 				
 				// selectUserByMap 수정 부분
-				// request.getSession().setAttribute("loginUser", userMapper.selectUserById(id));
-				
 				// 로그인 처리를 위해서 session에 로그인 된 사용자 정보를 올려둠
+				// request.getSession().setAttribute("loginUser", userMapper.selectUserById(id));
 				request.getSession().setAttribute("loginUser", userMapper.selectUserByMap(map));
 				
 				// 로그인 기록 남기기
@@ -314,6 +314,7 @@ public class UserServiceImpl implements UserService {
 		String url = request.getParameter("url");
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+		
 		// pw는 DB에 저장된 데이터와 동일한 형태로 가공
 		pw = securityUtil.sha256(pw);
 		
@@ -324,6 +325,7 @@ public class UserServiceImpl implements UserService {
 		//		.build();
 	
 		// selectUserByMap 추가 부분
+		// 조회 조건으로 사용할 Map
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("id", id);
 		map.put("pw", pw);
@@ -598,6 +600,8 @@ public class UserServiceImpl implements UserService {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			if(insertCount > 0 && deleteCount > 0) {
+				// session에 저장된 sleepUser 제거
+				session.removeAttribute("sleepUser");
 				out.println("<script>");
 				out.println("alert('휴면 계정이 복구되었습니다. 휴면 계정 활성화를 위해 곧바로 로그인을 해 주세요.')");
 				out.println("location.href='" + request.getContextPath() + "/user/login/form';");
@@ -621,16 +625,20 @@ public class UserServiceImpl implements UserService {
 		String apiURL = null;
 		
 		try {
+			
 		String clientId = "ymBUOS66J0o3pUpDZezX";//애플리케이션 클라이언트 아이디값";
-	    String redirectURI = URLEncoder.encode("http://localhost:9090" + request.getContextPath() + "/user/naver/login", "UTF-8");
+	    String redirectURI = URLEncoder.encode("http://localhost:9090" + request.getContextPath() + "/user/naver/login", "UTF-8"); // 네이버 로그인 Callback URL에 작성한 주소 입력
 	    SecureRandom random = new SecureRandom();
 	    String state = new BigInteger(130, random).toString();
+	    
 	    apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
 	    apiURL += "&client_id=" + clientId;
 	    apiURL += "&redirect_uri=" + redirectURI;
 	    apiURL += "&state=" + state;
+	    
 	    HttpSession session = request.getSession();
 	    session.setAttribute("state", state);
+	    
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -640,7 +648,7 @@ public class UserServiceImpl implements UserService {
 	
 	
 	@Override
-	public UserDTO getNaverLoginTokenNProfile(HttpServletRequest request) {
+	public String getNaverLoginToken(HttpServletRequest request) {
 		
 		// access_token 받기
 		
@@ -655,8 +663,6 @@ public class UserServiceImpl implements UserService {
 	    } catch (UnsupportedEncodingException e) {
 		      e.printStackTrace();
 		    }
-	    
-	    String access_token = "";
 	    
 	    StringBuffer res = new StringBuffer(); // StringBuffer는 StringBuilder와 동일한 역할 수행
 	    
@@ -703,57 +709,213 @@ public class UserServiceImpl implements UserService {
 		}
 	      
 	    JSONObject obj = new JSONObject(res.toString());
-	    access_token = obj.getString("access_token");
-	      
-	    // access_token을 이용해서 profile 받기
-	    String header = "Bearer " + access_token; // Bearer 다음에 공백 추가
-	      
-	    StringBuffer sb = new StringBuffer();
+	    String access_token = obj.getString("access_token");
+	    return access_token;
 	    
-	    try {
-	    	  
-	    	  String apiURL = "https://openapi.naver.com/v1/nid/me";
-	    	  URL url = new URL(apiURL);
-		      HttpURLConnection con = (HttpURLConnection)url.openConnection();
-		      con.setRequestMethod("GET");
-		      con.setRequestProperty("Authorization",header);
-		      int responseCode = con.getResponseCode();
-		      BufferedReader br;
-		      if(responseCode==200) { // 정상 호출
-		        br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-		      } else {  // 에러 발생
-		        br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
-		      }
-		      String inputLine;
-		      while ((inputLine = br.readLine()) != null) {
-		        sb.append(inputLine);
-		      }
-		      br.close();
-		      con.disconnect();
-		      
-		      /*
-		      	SB.toString();
-		      	{
-		      		"resultcode":"00",
-		      		"message":"success",
-		      		"response":{
-		      			"id":"",
-		      			"gender":"M",
-		      			"email":"",
-		      			"mobile":"",
-		      			"mobile_e164":"",
-		      			"name":"\uc870\ubb38\uc11d",
-		      			"birthday":"",
-		      			"birthyear":""}
-		      	}
-		      */
-	    } catch (Exception e) {
-	      e.printStackTrace();
-	    }
-	    
-	    // 받아온 profile을 UserDTO로 만들어서 반환
-	    
-		return null;
+	}
+	
+	
+	
+	@Override
+	public UserDTO getNaverLoginProfile(String access_token) {
+		
+		// access_token을 이용해서 profile 받기
+		String header = "Bearer " + access_token;
+		
+		StringBuffer sb = new StringBuffer();
+		
+		try {
+			
+			String apiURL = "https://openapi.naver.com/v1/nid/me";
+			URL url = new URL(apiURL);
+			HttpURLConnection con = (HttpURLConnection)url.openConnection();
+			con.setRequestMethod("GET");
+			con.setRequestProperty("Authorization", header);
+			int responseCode = con.getResponseCode();
+			BufferedReader br;
+			if(responseCode == 200) {
+				br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			} else {
+				br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+			}
+			String inputLine;
+			while ((inputLine = br.readLine()) != null) {
+				sb.append(inputLine);
+			}
+			br.close();
+			con.disconnect();
+			
+			/*
+				sb.toString()
+				
+				{
+					"resultcode": "00",
+					"message": "success",
+					"response": {
+						"id":"asdfghjklqwertyuiopzxcvbnmadfafrgbgfg",
+						"gender":"M",
+						"email":"hahaha@naver.com",
+						"mobile":"010-1111-1111",
+						"mobile_e164":"+821011111111",
+						"name":"\ubbfc\uacbd\ud0dc",
+						"birthday":"10-10",
+						"birthyear":"1990"
+					}
+				}
+			*/
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		// 받아온 profile을 UserDTO로 만들어서 반환
+		UserDTO user = null;
+		try {
+			
+			JSONObject profile = new JSONObject(sb.toString()).getJSONObject("response");
+			String id = profile.getString("id");
+			String name = profile.getString("name");
+			String gender = profile.getString("gender");
+			String email = profile.getString("email");
+			String mobile = profile.getString("mobile").replaceAll("-", "");
+			String birthyear = profile.getString("birthyear");
+			String birthday = profile.getString("birthday").replace("-", "");
+			
+			user = UserDTO.builder()
+					.id(id)
+					.name(name)
+					.gender(gender)
+					.email(email)
+					.mobile(mobile)
+					.birthyear(birthyear)
+					.birthday(birthday)
+					.build();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+		return user;
+	}
+	
+	
+	
+	@Override
+	public UserDTO getNaverUserById(String id) {
+		// 조회 조건으로 사용할 Map
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("id", id);
+		
+		return userMapper.selectUserByMap(map);
+	}
+	
+	
+	
+	@Transactional
+	@Override
+	public void naverLogin(HttpServletRequest request, UserDTO naverUser) {
+		
+		// 로그인 처리를 위해서 session에 로그인 된 사용자 정보를 올려둠
+		request.getSession().setAttribute("loginUser", naverUser);
+		
+		// 로그인 기록 남기기
+		String id = naverUser.getId();
+		int updateResult = userMapper.updateAccessLog(id);
+		if(updateResult == 0) {
+			userMapper.insertAccessLog(id);
+		}
+		
+	}
+	
+	
+	
+	@Override
+	public void naverJoin(HttpServletRequest request, HttpServletResponse response) {
+
+		// 파라미터
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String gender = request.getParameter("gender");
+		String mobile = request.getParameter("mobile");
+		String birthyear = request.getParameter("birthyear");
+		String birthmonth = request.getParameter("birthmonth");
+		String birthdate = request.getParameter("birthdate");
+		String email = request.getParameter("email");
+		String location = request.getParameter("location");
+		String promotion = request.getParameter("promotion");
+		
+		// 일부 파라미터는 DB에 넣을 수 있도록 가공
+		name = securityUtil.preventXSS(name);
+		String birthday = birthmonth + birthdate;
+		String pw = securityUtil.sha256(birthyear + birthday);  // 생년월일을 초기비번 8자리로 제공하기로 함
+		
+		int agreeCode = 0;  // 필수 동의
+		if(location != null && promotion == null) {
+			agreeCode = 1;  // 필수 + 위치
+		} else if(location == null && promotion != null) {
+			agreeCode = 2;  // 필수 + 프로모션
+		} else if(location != null && promotion != null) {
+			agreeCode = 3;  // 필수 + 위치 + 프로모션
+		}
+		
+		// DB로 보낼 UserDTO 만들기
+		UserDTO user = UserDTO.builder()
+				.id(id)
+				.pw(pw)
+				.name(name)
+				.gender(gender)
+				.email(email)
+				.mobile(mobile)
+				.birthyear(birthyear)
+				.birthday(birthday)
+				.agreeCode(agreeCode)
+				.snsType("naver")  // 네이버로그인으로 가입하면 naver를 저장해 두기로 함
+				.build();
+				
+		// 회원가입처리
+		int result = userMapper.insertNaverUser(user);
+		
+		// 응답
+		try {
+			
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			
+			if(result > 0) {
+				
+				// 조회 조건으로 사용할 Map
+				Map<String, Object> map = new HashMap<String, Object>();
+				map.put("id", id);
+				
+				// 로그인 처리를 위해서 session에 로그인 된 사용자 정보를 올려둠
+				request.getSession().setAttribute("loginUser", userMapper.selectUserByMap(map));
+				
+				// 로그인 기록 남기기
+				int updateResult = userMapper.updateAccessLog(id);
+				if(updateResult == 0) {
+					userMapper.insertAccessLog(id);
+				}
+				
+				out.println("<script>");
+				out.println("alert('회원 가입되었습니다.');");
+				out.println("location.href='" + request.getContextPath() + "';");
+				out.println("</script>");
+				
+			} else {
+				
+				out.println("<script>");
+				out.println("alert('회원 가입에 실패했습니다.');");
+				out.println("history.go(-2);");
+				out.println("</script>");
+				
+			}
+			
+			out.close();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	
