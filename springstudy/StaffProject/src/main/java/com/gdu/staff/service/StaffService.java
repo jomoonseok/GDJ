@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import com.gdu.staff.domain.StaffDTO;
 
 public interface StaffService {
-	public List<StaffDTO> getStaffList();
+	public List<StaffDTO> getAllStaffList();
 	public ResponseEntity<String> addStaff(StaffDTO staff);
-	public ResponseEntity<Object> getStaff(String query);
+	public StaffDTO findStaff(String query);
 }

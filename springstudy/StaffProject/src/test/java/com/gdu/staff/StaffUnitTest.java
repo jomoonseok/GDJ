@@ -3,6 +3,7 @@ package com.gdu.staff;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +20,19 @@ public class StaffUnitTest {
 	@Autowired
 	private StaffMapper staffMapper;
 	
-	//@Test
-	public void 사원등록테스트() {
-		StaffDTO staff = new StaffDTO("99999", "김기획", "기획부", 5000);
-		assertEquals(1, staffMapper.insertStaff(staff));
+	@Before
+	public void 테스트이전_사원삽입() {
+		StaffDTO staff = new StaffDTO();
+		staff.setSno("99999");
+		staff.setName("김기획");
+		staff.setDept("기획부");
+		staff.setSalary(5000);
+		assertEquals("사원 등록에 문제가 있습니다.", 1, staffMapper.insertStaff(staff));
 	}
-	
+
 	@Test
 	public void 사원조회테스트() {
-		assertNotNull(staffMapper.selectBySno("99999")); 
+		assertNotNull("사원 검색에 문제가 있습니다.", staffMapper.selectStaffBySno("99999"));
 	}
-	
+
 }

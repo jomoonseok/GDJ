@@ -10,5 +10,5 @@ import com.gdu.staff.domain.StaffDTO;
 public interface StaffMapper {
 	public List<StaffDTO> selectStaffList();
 	public int insertStaff(StaffDTO staff);
-	public StaffDTO selectBySno(String query);
+	public StaffDTO selectStaffBySno(String query);
 }
