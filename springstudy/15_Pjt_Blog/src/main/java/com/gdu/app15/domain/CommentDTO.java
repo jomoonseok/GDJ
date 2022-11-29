@@ -19,4 +19,5 @@ public class CommentDTO {
 	private int depth;
 	private int groupNo;
 	private Date createDate;
+	// 사용자 정보가 들어와야 한다.
 }

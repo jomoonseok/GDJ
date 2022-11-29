@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,4 +38,17 @@ public class CommentController {
 	public Map<String, Object> list(HttpServletRequest request){
 		return commentService.getCommentList(request);
 	}
+	
+	@ResponseBody
+	@PostMapping(value="/comment/remove", produces="application/json")
+	public Map<String, Object> remove(@RequestParam("commentNo") int commentNo){
+		return commentService.removeComment(commentNo);
+	}
+	
+	@ResponseBody
+	@PostMapping(value="/comment/reply/add", produces="application/json")
+	public Map<String, Object> replyAdd(CommentDTO reply){
+		return commentService.addReply(reply);
+	}
+	
 }

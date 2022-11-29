@@ -1,0 +1,27 @@
+* 빌드와 배포
+1. 빌드 :  .war 만드는 것
+2. qovh : .war를 tomcat의 webapps 디렉터리에 두는 것
+
+참고로 최신에는 .war 대신 .jar를 배포하는 경우가 늘고 있음
+
+pom.xml과 빌드 
+
+<groupId>com.gdu</groupId>
+<artifactId>myapp</artifactId>
+<name>MyProject</name>
+<packaging>war</packaging>
+<version>1.0.0-BUILD-SNAPSHOT</version>
+
+빌드되는 파일명 : myapp-1.0.0-BUILD-SNAPSHOT.war
+------------------------------------------------------------
+
+다운로드 경로
+https://maven.apache.org/ -> Download -> Previous Releases의 archives -> 3.8.1(maven-version에 맞춤) -> binaries -> apache-maven-3.8.1-bin.zip
+
+압축 풀고 Program Files에 넣어두기
+환경변수 설정하기 MAVEN_HOME
+
+jenkins 다운로드 경로
+jenkins.io -> download -> Download Jenkins 2.361.4 LTS for:Generic Java package (.war)
+-----------------------------------------------------------
+
