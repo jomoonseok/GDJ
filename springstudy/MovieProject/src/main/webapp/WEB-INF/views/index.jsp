@@ -41,8 +41,7 @@
 		$('#btn_search').click(function(){
 			
 			$.ajax({
-				
-				data: 'GET',
+				type: 'GET',
 				url: '${contextPath}/movie/searchMovie',
 				data: 'column=' + $('#column').val() + '&searchText=' + $('#searchText').val(),
 				datatype: 'json',
