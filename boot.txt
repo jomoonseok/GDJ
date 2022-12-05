@@ -1,0 +1,5 @@
+Help -> Eclipse MarketPlace -> web developer 검색 -> Eclipse Enterprise java and Web Developer Tools 3.27 설치
+
+Preferences -> Run/Debug -> Console에서 Limit console output 체크 해제
+
+start.spring.io -> 이미지 참고
