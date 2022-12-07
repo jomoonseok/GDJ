@@ -9,7 +9,6 @@ import com.gdu.app02.domain.CommentDTO;
 
 @Mapper
 public interface CommentMapper {
-	
 	public int selectCommentCount(int blogNo);
 	public int insertComment(CommentDTO comment);
 	public List<CommentDTO> selectCommentList(Map<String, Object> map);

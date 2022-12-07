@@ -26,11 +26,11 @@ public class BlogController {
 	public String index() {
 		return "index";
 	}
-
+	
 	@GetMapping("/blog/list")
-	public String list(HttpServletRequest request, Model model) { // service의 매개변수를 model로 통일할 때 좋은 방법(비추천)
-		model.addAttribute("request", request); // model에 request를 저장하기
-		blogService.getBlogList(model);         // model만 넘기지만 이미 model에는 request가 들어 있음 
+	public String list(HttpServletRequest request, Model model) {
+		model.addAttribute("request", request);  // model에 request를 저장하기
+		blogService.getBlogList(model);          // model만 넘기지만 이미 model에는 request가 들어 있음
 		return "blog/list";
 	}
 	
@@ -39,24 +39,24 @@ public class BlogController {
 		return "blog/write";
 	}
 	
+	@ResponseBody
+	@PostMapping(value="/blog/uploadImage", produces="application/json")
+	public Map<String, Object> uploadImage(MultipartHttpServletRequest multipartRequest) {
+		return blogService.saveSummernoteImage(multipartRequest);
+	}
+	
 	@PostMapping("/blog/add")
 	public void add(HttpServletRequest request, HttpServletResponse response) {
 		blogService.saveBlog(request, response);
 	}
 	
-	@ResponseBody
-	@PostMapping(value="/blog/uploadImage", produces="application/json")
-	public Map<String, Object> uploadImage(MultipartHttpServletRequest multipartRequest){
-		return blogService.saveSummernoteImage(multipartRequest);
-	}
-	
 	@GetMapping("/blog/increse/hit")
 	public String increseHit(@RequestParam(value="blogNo", required=false, defaultValue="0") int blogNo) {
 		int result = blogService.increseBlogHit(blogNo);
-		if(result>0) { // 조회수 증가 성공하면 상세보기로 이동
+		if(result > 0) {  // 조회수 증가에 성공하면 상세보기로 이동
 			return "redirect:/blog/detail?blogNo=" + blogNo;
-		} else {
-			return "redirect:/blog/list"; // 조회수 증가에 실패하면 목록보기로 이동
+		} else {          // 조회수 증가에 실패하면 목록보기로 이동
+			return "redirect:/blog/list";
 		}
 	}
 	
@@ -74,12 +74,12 @@ public class BlogController {
 	
 	@PostMapping("/blog/modify")
 	public void modify(HttpServletRequest request, HttpServletResponse response) {
-		blogService.modifyBlog(request, response); // 수정 후 상세보기로
+		blogService.modifyBlog(request, response);
 	}
 	
 	@PostMapping("/blog/remove")
 	public void remove(HttpServletRequest request, HttpServletResponse response) {
-		blogService.removeBlog(request, response); // 삭제 후 목록보기로
+		blogService.removeBlog(request, response);
 	}
 	
 }

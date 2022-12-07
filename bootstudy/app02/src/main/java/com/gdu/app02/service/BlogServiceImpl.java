@@ -77,7 +77,7 @@ public class BlogServiceImpl implements BlogService {
 		String path = "C:" + File.separator + "summernoteImage";
 				
 		// 저장할 파일명
-		String filesystem = myFileUtil.getFileName(multipartFile.getOriginalFilename());
+		String filesystem = myFileUtil.getFilename(multipartFile.getOriginalFilename());
 		
 		// 저장 경로가 없으면 만들기
 		File dir = new File(path);

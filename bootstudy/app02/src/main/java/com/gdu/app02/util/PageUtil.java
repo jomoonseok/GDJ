@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 import lombok.Getter;
 
-@Getter
 @Component
+@Getter
 public class PageUtil {
 
 	private int page;                // 현재 페이지(파라미터로 받아온다)
@@ -73,9 +73,5 @@ public class PageUtil {
 		return sb.toString();
 		
 	}
-	
-	
-	
-	
 	
 }
