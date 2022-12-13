@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
 		
 		// 인증코드 만들기
 		String authCode = securityUtil.getAuthCode(6);  // String authCode = securityUtil.generateRandomString(6);
-		// System.out.println("발송된 인증코드 : " + authCode);
+		System.out.println("발송된 인증코드 : " + authCode);
 		
 		// 메일 전송
 		javaMailUtil.sendJavaMail(email, "[Application] 인증요청", "인증번호는 <strong>" + authCode + "</strong>입니다.");
