@@ -1,0 +1,15 @@
+query 작성창 끄고 Edit -> preferences
+query 작성창 : File 밑에 아이콘 클릭
+SCOTT과 같은 유저를 만드는데 MySQL에서는 스키마라고 부른다.
+Navigator 아래쪽에 Schemas를 누르면 샘플 계정이 몇 개 있다.
+우클릭 - create Schema 누르면 새로운 계정을 만들 수 있다.
+name 설정하고 charset/collation은 utf8, ytf8_bin 선택하고 apply
+
+application.properties의 spring.datasource.hikari.jdbc-url=jdbc:mysql://localhost:3306/team?serverTimezone=Asia/Seoul&characterEncoding=UTF-8 에서 스키마를 팀 프로젝트명으로 바꿀 수 있다.
+
+pom.xml oracle -> mysql
+<dependency>
+	<groupId>com.mysql</groupId>
+	<artifactId>mysql-connector-j</artifactId>
+	<scope>runtime</scope>
+</dependency>
