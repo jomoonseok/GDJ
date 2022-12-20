@@ -587,7 +587,7 @@ public class UserServiceImpl implements UserService {
 		String clientSecret = "aSF2zE3ZRQ";
 		String code = request.getParameter("code");
 		String state = request.getParameter("state");
-		
+		System.out.println("contextPath : " + request.getContextPath());
 		String redirectURI = null;
 		try {
 			redirectURI = URLEncoder.encode("http://localhost:9090" + request.getContextPath(), "UTF-8");
